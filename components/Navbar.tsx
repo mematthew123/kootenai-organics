@@ -40,7 +40,7 @@ const Navbar = () => {
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-gray-100">
         <Link href="/">
           <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
-            <span className="text-green-500">KO</span>Logo
+            <span className="text-green-800">KO</span>Logo
           </h1>
         </Link>
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex">

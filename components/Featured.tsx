@@ -2,10 +2,15 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import { useInView } from "framer-motion";
 import Image from "next/image";
-import { Merriweather } from "next/font/google";
-import { Barlow } from "next/font/google";
-import { Poppins } from "next/font/google";
-import { PortableText } from "@portabletext/react";
+import { Fraunces, Poppins } from "next/font/google";
+
+
+const inter = Fraunces({
+  subsets: ["latin"],
+  style: "normal",
+  variable: "--font-fraunces",
+  weight: "900",
+});
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -14,19 +19,6 @@ const poppins = Poppins({
   weight: "600",
 });
 
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  style: "normal",
-  variable: "--font-display",
-  weight: "900",
-});
-
-const barlow = Barlow({
-  subsets: ["latin"],
-  style: "normal",
-  variable: "--font-barlow",
-  weight: "400",
-});
 
 type TextPosition = "left" | "center" | "right";
 
@@ -72,7 +64,7 @@ const Featured: React.FC<{ featuredData: FeaturedData }> = ({
         >
           <h2
             className={
-              poppins.className +
+              inter.className +
               " text-3xl text-center lg:text-4xl font-semi-bold lg:mb-6 mt-10 mb-2 my-3"
             }
           >
@@ -80,18 +72,19 @@ const Featured: React.FC<{ featuredData: FeaturedData }> = ({
           </h2>
           <div
             className={
-              merriweather.className +
+              poppins.className +
               "mx-auto max-w-prose text-center text-base lg:max-w-none"
             }
           >
-            <p className="text-lg text-gray-500 mx-auto mb-8">
+            <p className={
+              poppins.className +"text-lg text-gray-500 mx-auto mb-8"}>
               {featuredData.description}
             </p>
           </div>
           <Link href="/menu">
             <p
               className={
-                barlow.className +
+                poppins.className +
                 "inline-block leading-loose bg-green-800 text-gray-100 px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
               }
             >

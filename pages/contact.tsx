@@ -4,8 +4,14 @@ import Navbar from "@/components/Navbar";
 import React from "react";
 import { getContactUs } from "@/sanity/queries/getContactUs";
 import { PortableText } from "@portabletext/react";
-import { Fraunces } from "next/font/google";
-import { Merriweather, Barlow } from "next/font/google";
+import { Fraunces, Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  style: "normal",
+  variable: "--font-display",
+  weight: "200",
+});
 
 export async function getStaticProps() {
   const contactUsContent = await getContactUs();
@@ -39,19 +45,9 @@ const inter = Fraunces({
   weight: "900",
 });
 
-const barlow = Barlow({
-  subsets: ["latin"],
-  style: "normal",
-  variable: "--font-display",
-  weight: "400",
-});
 
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  style: "normal",
-  variable: "--font-display",
-  weight: "900",
-});
+
+
 
 const Contact = ({ contactUsContent }: Props) => {
   return (
@@ -85,7 +81,7 @@ const Contact = ({ contactUsContent }: Props) => {
 
               <div
                 className={
-                  barlow.className +
+                  poppins.className +
                   "mx-auto max-w-prose text-center text-base lg:max-w-none"
                 }
               >
@@ -120,7 +116,7 @@ const Contact = ({ contactUsContent }: Props) => {
                   <a
                     href={`tel:${content.phone}`}
                     className={
-                      merriweather.className +
+                      poppins.className +
                       "  bg-blue-600 text-white mx-auto mb-2 text-lg leading-relaxed py-4 px-8 lg:max-w-xl rounded-full transition-colors duration-300 ease-in-out hover:bg-blue-800"
                     }
                   >
@@ -129,7 +125,7 @@ const Contact = ({ contactUsContent }: Props) => {
                   <a
                     href={`mailto:${content.email}`}
                     className={
-                      merriweather.className +
+                      poppins.className +
                       "  bg-blue-600 text-white mx-auto mb-2 text-lg leading-relaxed py-4 px-8 lg:max-w-xl rounded-full transition-colors duration-300 ease-in-out hover:bg-blue-800"
                     }
                   >

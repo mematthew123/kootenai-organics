@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Merriweather } from "next/font/google";
+import { Fraunces } from "next/font/google";
 
-const inter = Merriweather({
+const inter = Fraunces({
   subsets: ["latin"],
   style: "normal",
   variable: "--font-display",
@@ -11,7 +11,7 @@ const inter = Merriweather({
 });
 
 type FeaturedProductProps = {
-  product: any; 
+  product: any;
 };
 
 const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product }) => {
@@ -34,12 +34,12 @@ const FeaturedProduct: React.FC<FeaturedProductProps> = ({ product }) => {
         />
       </div>
       <div className="flex-1 flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-4">
-      <h2
-        className={
-          inter.className + " text-3xl font-bold mb-2 text-gray-800"}>
-            {product.title}
-            </h2>      
-          <p className="text-lg">{product.description}</p>
+        <h2
+          className={inter.className + " text-3xl font-bold mb-2 text-gray-800"}
+        >
+          {product.title}
+        </h2>
+        <p className="text-lg">{product.description}</p>
         <button
           onClick={handleBuyNowClick}
           className="bg-green-800 text-white w-full lg:w-auto px-4 py-2 rounded hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"

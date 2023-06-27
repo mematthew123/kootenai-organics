@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { client } from "../sanity/lib/client";
 import { urlForImage } from "../sanity/lib/image";
-import { Permanent_Marker } from "next/font/google";
+import { Permanent_Marker, Poppins } from "next/font/google";
 import { Fraunces } from "next/font/google";
 import { motion } from "framer-motion";
 
@@ -29,6 +29,13 @@ const inter = Permanent_Marker({
   style: "normal",
   variable: "--font-fraunces",
   weight: "400",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  style: "normal",
+  variable: "--font-display",
+  weight: "600",
 });
 
 const MenuBoard: React.FC<Props> = () => {
@@ -59,10 +66,17 @@ const MenuBoard: React.FC<Props> = () => {
           {specials.map((special) => (
             <div
               key={special._id}
-              className="border-b-2 px-5 text-center border-dashed border-white mb-4 pb-4"
+              className="border-b-2 px-5 my-2 text-center leading-relaxed border-dashed border-white mb-4 pb-4"
             >
-              <h2 className="text-2xl font-bold">{special.title}</h2>
-              <p className="text-xl">{special.description}</p>
+              <h3
+                className={`${inter.className} mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl`}
+              ></h3>
+              <h1 className="text-2xl lg:text-3xl py-2  text-slate-100 font-bold">
+                {special.title}
+              </h1>
+              <p className="text-xl text-slate-100 py-2 ">
+                {special.description}
+              </p>
               <p className="text-xl">{special.price}</p>
             </div>
           ))}

@@ -6,29 +6,20 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { client } from "../sanity/lib/client";
 import { PortableText } from "@portabletext/react";
-import { Barlow } from "next/font/google";
-import { Merriweather } from "next/font/google";
-import { Fraunces } from "next/font/google";
+import { Fraunces, Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  style: "normal",
+  variable: "--font-display",
+  weight: "200",
+});
 
 const inter = Fraunces({
   subsets: ["latin"],
   style: "normal",
   variable: "--font-fraunces",
   weight: "900",
-});
-
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  style: "normal",
-  variable: "--font-display",
-  weight: "900",
-});
-
-const barlow = Barlow({
-  subsets: ["latin"],
-  style: "normal",
-  variable: "--font-display",
-  weight: "400",
 });
 
 interface ContentProps {
@@ -55,7 +46,9 @@ export default function Content() {
         <div className="absolute bottom-0 left-3/4 top-0 hidden w-screen bg-gray-50 lg:block" />
         <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
           <div>
-          <h3 className={`${inter.className} mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl`}>
+            <h3
+              className={`${inter.className} mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl`}
+            >
               {contentData.title}
             </h3>
           </div>
@@ -118,9 +111,10 @@ export default function Content() {
           </div>
           <div className="mt-8 lg:mt-0">
             <SectionUp>
-            <div className={`${barlow.className}
+              <div
+                className={`${poppins.className}
                   "mx-auto max-w-prose text-base lg:max-w-none"
-               ` }
+               `}
               >
                 <p className="text-lg text-gray-500">
                   <PortableText value={contentData.description} />

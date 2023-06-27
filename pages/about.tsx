@@ -4,22 +4,25 @@ import Layout from "@/components/Layout";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
-import { Barlow } from "next/font/google";
-import { Merriweather } from "next/font/google";
+import { Poppins, Fraunces } from "next/font/google";
 
-const merriweather = Merriweather({
+const inter = Fraunces({
   subsets: ["latin"],
   style: "normal",
-  variable: "--font-display",
+  variable: "--font-fraunces",
   weight: "900",
 });
 
-const barlow = Barlow({
+const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
   variable: "--font-display",
-  weight: "400",
+  weight: "200",
 });
+
+
+
+
 
 export async function getStaticProps() {
   const aboutUsContent = await getAboutUs();
@@ -50,7 +53,7 @@ const AboutUs = ({ aboutUsContent }: Props) => {
         <div className="bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200">
           <div
             className={
-              merriweather.className +
+              inter.className +
               "mt-20 lg:mt-52 p-4 text-center text-gray-700"
             }
           >
@@ -68,40 +71,40 @@ const AboutUs = ({ aboutUsContent }: Props) => {
                 <div key={content.title}>
                   <h2
                     className={
-                      merriweather.className +
+                      inter.className +
                       " text-4xl text-center lg:text-7xl font-semi-bold lg:mb-6 mb-4"
                     }
                   >
                     {content.title}
                   </h2>
-                  <div className="mx-auto shadow-lg rounded-lg object-cover overflow-hidden mb-8">
-                    <Image
-                      src={content.topImageUrl || "/burning.jpeg"}
-                      alt={content.topImageAlt}
-                      width={800}
-                      height={800}
-                      className="w-full h-full object-cover align-middle"
-                    />
-                  </div>
+                  <div className="flex justify-center items-center mx-auto my-10 overflow-hidden rounded-lg">
+                <Image
+                  src={content.topImageUrl || "/burning.jpeg"}
+                  alt={content.topImageAlt}
+                  width={800}
+                  height={800}
+                  className="object-cover rounded-lg shadow-md"
+                />
+              </div>
                   <div
                     className={
-                      barlow.className + "prose prose-lg mx-auto text-center"
+                      poppins.className + "prose prose-lg mx-auto text-center"
                     }
                   >
                     <PortableText value={firstHalfBody} />
                   </div>
-                  <div className="mx-auto shadow-lg rounded-lg overflow-hidden mt-8 mb-8">
+                  <div className="flex justify-center items-center mx-auto my-10 overflow-hidden rounded-lg">
                     <Image
                       src={content.bottomImageUrl}
                       alt={content.bottomImageAlt}
-                      width={600}
-                      height={400}
-                      className="w-full h-full object-cover align-middle"
+                      width={800}
+                      height={800}
+                      className="object-cover rounded-lg shadow-md"
                     />
                   </div>
                   <div
                     className={
-                      barlow.className + "prose prose-lg mx-auto text-center"
+                      poppins.className + "prose prose-lg mx-auto text-center"
                     }
                   >
                     {" "}

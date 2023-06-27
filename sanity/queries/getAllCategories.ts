@@ -6,7 +6,6 @@ export async function getAllCategories() {
     const categories = await client.fetch(`
         *[_type == "category"] {
         title,
-        description
         }
     `)
     

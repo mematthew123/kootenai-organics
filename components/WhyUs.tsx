@@ -1,11 +1,11 @@
 import React from "react";
 import { GiFlowerPot } from "react-icons/gi";
-import { Merriweather, Barlow } from "next/font/google";
 import { motion } from "framer-motion";
 import { FaCannabis } from "react-icons/fa";
 import SectionRight from "@/animations/sectionRight";
 import SectionUp from "@/animations/sectionUp";
-import { Fraunces } from "next/font/google";
+import { Fraunces, Poppins } from "next/font/google";
+
 
 const features = [
   {
@@ -32,14 +32,9 @@ const inter = Fraunces({
   weight: "900",
 });
 
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  style: "normal",
-  variable: "--font-display",
-  weight: "900",
-});
 
-const barlow = Barlow({
+
+const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
   variable: "--font-display",
@@ -59,7 +54,7 @@ const WhyUs = () => {
         </h2>
         <p
           className={
-            barlow.className + " text-lg text-gray-600 leading-relaxed"
+            poppins.className + " text-lg text-gray-600 leading-relaxed"
           }
         >
           We have over 15 years of experience in the cannabis industry and we
@@ -73,7 +68,7 @@ const WhyUs = () => {
         {features.map(({ title, description }, index) => (
           <div
             key={index}
-            className="bg-gray-300 flex flex-col items-center justify-center p-6 rounded-lg shadow-lg space-y-4"
+            className="bg-[#E9EDC9] flex flex-col items-center justify-center p-6 rounded-lg shadow-lg space-y-4"
           >
             <SectionRight>
               <FaCannabis className="text-6xl text-gray-600" />
@@ -82,7 +77,7 @@ const WhyUs = () => {
               <h2
                 className={
                   inter.className +
-                  " leading-relaxed text-center text-2xl  text-gray-600"
+                  " leading-relaxed flex justify-center text-center text-2xl  text-gray-600"
                 }
               >
                 {title}
@@ -91,7 +86,8 @@ const WhyUs = () => {
             <SectionUp>
               <p
                 className={
-                  barlow.className + "text-center lg:text-lg text-gray-600"
+                  poppins.className +
+                  " mx-auto text-center flex justify-center lg:text-lg text-gray-600"
                 }
               >
                 {description}
