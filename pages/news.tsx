@@ -68,8 +68,19 @@ const News = ({ posts, categories }: Props) => {
     <>
       <Navbar />
       <Layout>
-        <div className="my-20 lg:mt-52 p-4 mx-auto ">
-          <div className="flex space-x-4">
+      <div className="bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200">
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="text-4xl font-semibold text-gray-900 mb-4">
+            News
+          </h1>
+          <p className="text-gray-500 text-center my-4 ">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
+            elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin
+            eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.
+            Duis dapibus diam vel metus tempus vulputate.
+          </p>
+        </div>
+          <div className="flex justify-center space-x-4">
             {categories.map((category) => (
               <button
                 key={category._id}
@@ -103,7 +114,6 @@ const News = ({ posts, categories }: Props) => {
                       <h2 className="text-2xl font-semibold mb-2 text-gray-900">
                         {post.title}
                       </h2>
-                      <p className="text-gray-600">{post.description}</p>
                     </div>
                   </div>
                 </Link>

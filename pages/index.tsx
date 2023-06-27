@@ -21,7 +21,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
   variable: "--font-popins",
-  weight: "200",
+  weight: "300",
 });
 
 
