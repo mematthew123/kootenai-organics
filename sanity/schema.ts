@@ -14,7 +14,8 @@ import banner from './schemas/banner'
 import content from './schemas/content'
 import aboutUsPage from './schemas/aboutUsPage'
 import contactUsPage from './schemas/contactUsPage'
+import testimonials from './schemas/testimonials'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [post, category, blockContent,menu,featured,banner,content,aboutUsPage,contactUsPage],
+  types: [banner,featured,menu,content, post, category, blockContent,aboutUsPage,contactUsPage],
 }

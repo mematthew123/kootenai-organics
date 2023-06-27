@@ -6,7 +6,6 @@ import SectionRight from "@/animations/sectionRight";
 import SectionUp from "@/animations/sectionUp";
 import { Fraunces, Poppins } from "next/font/google";
 
-
 const features = [
   {
     title: "100% Organic",
@@ -31,8 +30,6 @@ const inter = Fraunces({
   variable: "--font-fraunces",
   weight: "900",
 });
-
-
 
 const poppins = Poppins({
   subsets: ["latin"],
