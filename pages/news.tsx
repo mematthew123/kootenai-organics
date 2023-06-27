@@ -63,24 +63,35 @@ const News = ({ posts, categories }: Props) => {
       setCurrentFilter(category);
     }
   };
-  
+
   return (
     <>
       <Navbar />
       <Layout>
-      <div className="bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200">
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text-4xl font-semibold text-gray-900 mb-4">
-            News
-          </h1>
-          <p className="text-gray-500 text-center my-4 ">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
-            elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin
-            eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.
-            Duis dapibus diam vel metus tempus vulputate.
-          </p>
-        </div>
-          <div className="flex justify-center space-x-4">
+        <div className="bg-[#E9EDC9]   flex flex-col  items-center p-4 lg:p-10 space-y-4 lg:space-y-10 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto my-20 rounded-md shadow-lg border border-gray-200">
+          <div className="flex flex-col items-center justify-center p-6 lg:p-12rounded-lg text-gray-800  max-w-7xl mx-auto ">
+            <h2
+              className={
+                inter.className +
+                " text-4xl text-center lg:text-7xl font-semi-bold lg:mb-6 mb-4"
+              }
+            >
+              Latest News
+            </h2>
+            <div
+              className={
+                poppins.className +
+                "mx-auto max-w-prose text-center text-base lg:max-w-none"
+              }
+            >
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
+              elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin
+              eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.
+              Duis dapibus diam vel metus tempus vulputate.
+            </div>
+          </div>
+          <div className="flex justify-center my-5  space-x-4">
             {categories.map((category) => (
               <button
                 key={category._id}

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
-import SectionDown from "@/animations/sectionDown";
-import SectionRight from "@/animations/sectionRight";
-import SectionUp from "@/animations/sectionUp";
 import Section from "@/animations/section";
+import { AiOutlineClose } from 'react-icons/ai';
 
 const Banner = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,13 +31,13 @@ const Banner = () => {
   return (
     <>
     <Section>
-    <div className="fixed mt-20  overflow-hidden left-1/2 transform -translate-x-1/2 w-full  h-14 lg:h-20 rounded-lg bg-green-600 text-gray-700 border-1 border-zinc-600 z-10 flex justify-center items-center ">
-      <h1 className=" text-lg lg:text-4xl">{bannerText}</h1>
+    <div className="fixed mt-20 overflow-hidden left-1/2 transform -translate-x-1/2 w-full max-w-7xl h-14 lg:h-20 rounded-lg bg-gray-100 text-gray-700 border border-gray-300 z-50 flex justify-center items-center shadow-lg">
+      <h1 className="font-sans text-lg lg:text-2xl font-semibold">{bannerText}</h1>
       <button
         onClick={handleClose}
-        className="absolute top-0 right-0 mt-4 mr-4 text-lg lg:text-2xl text-gray-700 hover:text-gray-900 transition-colors duration-200"
+        className="absolute top-0 right-0 mt-3 lg:mt-5 mr-3 lg:mr-5 text-gray-500 hover:text-gray-700 transition-colors duration-200"
       >
-        X
+        <AiOutlineClose size={24} />
       </button>
     </div>
     </Section>
