@@ -116,7 +116,11 @@ export default function Content() {
                   "mx-auto max-w-prose text-base lg:max-w-none"
                `}
               >
-                <p className="text-lg text-gray-500">
+                <p
+                  className={`${poppins.className}
+                  "mx-auto max-w-prose text-gray-600 text-base lg:max-w-none"
+               `}
+                >
                   <PortableText value={contentData.description} />
                 </p>
               </div>
