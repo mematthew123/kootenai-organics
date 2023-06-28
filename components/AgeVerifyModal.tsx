@@ -23,7 +23,7 @@ const AgeVerifyModal = () => {
                 <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
                   Age Verification
                 </h3>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-600">
                   Please confirm that you are 18 years old or older to access
                   this site.
                 </p>

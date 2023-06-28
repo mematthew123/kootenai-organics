@@ -39,10 +39,14 @@ export default function Testimonials() {
     <div className="bg-[#E9EDC9] mt-20 lg:mt-40 flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1100px] max-w-full mx-auto mb-20 rounded-md overflow-hidden shadow-lg border border-gray-200">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 bg-[#E9EDC9] py-24 sm:py-32">
         <div className="mx-auto max-w-xl text-center">
-        <h2 className={`${inter.className} "text-lg font-semibold leading-8 tracking-tight text-indigo-600"`}>
-           The reviews are in
+        <h2
+                className={
+                  inter.className + " text-3xl font-extrabold text-gray-600"
+                }
+              >
+                The Reviews are in!
           </h2>
-          <p className={`${poppins.className}"mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"`}>
+          <p className=" font-poppins mt-2 text-xl font-bold  text-gray-800 sm:text-4xl">
             What our customers are saying
           </p>
         </div>

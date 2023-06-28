@@ -35,7 +35,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
   variable: "--font-display",
-  weight: "600",
+  weight: "200",
 });
 
 const MenuBoard: React.FC<Props> = () => {

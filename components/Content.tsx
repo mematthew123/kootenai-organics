@@ -99,7 +99,7 @@ export default function Content() {
                     height={1376}
                   />
                 </div>
-                <figcaption className="mt-3 flex text-sm text-gray-500">
+                <figcaption className="mt-3 flex text-sm text-gray-600">
                   <CameraIcon
                     className="h-5 w-5 flex-none text-gray-400"
                     aria-hidden="true"
@@ -111,19 +111,12 @@ export default function Content() {
           </div>
           <div className="mt-8 lg:mt-0">
             <SectionUp>
-              <div
-                className={`${poppins.className}
-                  "mx-auto max-w-prose text-base lg:max-w-none"
-               `}
-              >
-                <p
-                  className={`${poppins.className}
-                  "mx-auto max-w-prose text-gray-600 text-base lg:max-w-none"
-               `}
+
+                <p className=" font-poppins mx-auto max-w-prose text-gray-600 text-large font-light lg:max-w-none"
                 >
                   <PortableText value={contentData.description} />
                 </p>
-              </div>
+              {/* </div> */}
             </SectionUp>
           </div>
         </div>

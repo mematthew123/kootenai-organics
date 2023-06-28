@@ -95,7 +95,7 @@ const Contact = ({ contactUsContent }: Props) => {
                   "mx-auto max-w-prose text-center text-base lg:max-w-none"
                 }
               >
-                <p className="text-lg text-gray-500 mx-auto mb-8">
+                <p className="text-lg text-gray-600 mx-auto mb-8">
                   <PortableText value={content.body} />
                 </p>
               </div>

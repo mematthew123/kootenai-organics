@@ -4,7 +4,6 @@ import { useInView } from "framer-motion";
 import Image from "next/image";
 import { Fraunces, Poppins } from "next/font/google";
 
-
 const inter = Fraunces({
   subsets: ["latin"],
   style: "normal",
@@ -16,9 +15,8 @@ const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
   variable: "--font-display",
-  weight: "600",
+  weight: "800",
 });
-
 
 type TextPosition = "left" | "center" | "right";
 
@@ -65,22 +63,16 @@ const Featured: React.FC<{ featuredData: FeaturedData }> = ({
           <h2
             className={
               inter.className +
-              " text-3xl text-center lg:text-4xl font-semi-bold lg:mb-6 mt-10 mb-2 my-3"
+              " text-3xl text-center lg:text-4xl font-semi-bold text-gray-800 lg:mb-6 mt-10 mb-2 my-3"
             }
           >
             {featuredData.title}
           </h2>
-          <div
-            className={
-              poppins.className +
-              "mx-auto max-w-prose text-center text-base lg:max-w-none"
-            }
-          >
-            <p className={
-              poppins.className +"text-lg text-gray-500 mx-auto mb-8"}>
+            <p className="font-poppins text-lg text-gray-600 mx-auto mb-8"
+              
+            >
               {featuredData.description}
             </p>
-          </div>
           <Link href="/menu">
             <p
               className={

@@ -35,7 +35,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
   variable: "--font-display",
-  weight: "400",
+  weight: "200",
 });
 
 const WhyUs = () => {
@@ -49,11 +49,7 @@ const WhyUs = () => {
         >
           Why Choose Us?
         </h2>
-        <p
-          className={
-            poppins.className + " text-lg text-gray-600 leading-relaxed"
-          }
-        >
+        <p className="mx-auto text-center flex justify-center font-poppins font-light lg:text-lg text-gray-600">
           We have over 15 years of experience in the cannabis industry and we
           are passionate about exceeding your expectations. We love our
           customers and welcome your feedback and suggestions. Use our Contact
@@ -81,12 +77,7 @@ const WhyUs = () => {
               </h2>
             </SectionUp>
             <SectionUp>
-              <p
-                className={
-                  poppins.className +
-                  " mx-auto text-center flex justify-center lg:text-lg text-gray-600"
-                }
-              >
+              <p className=" mx-auto text-center flex justify-center font-poppins font-light lg:text-lg text-gray-600">
                 {description}
               </p>
             </SectionUp>
