@@ -1,0 +1,22 @@
+{
+    "short_name": "Kootanei Organics",
+    "name": "Kootanei Organics - Organic Farming",
+    "icons": [
+      {
+        "src": "public/burning.jpeg",
+        "type": "image/jpeg",
+        "sizes": "192x192"
+      },
+      {
+        "src": "public/magazine.jpg",
+        "type": "image/jpg",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#000000"
+  }
+  
