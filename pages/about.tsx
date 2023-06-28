@@ -83,7 +83,7 @@ const AboutUs = ({ aboutUsContent }: Props) => {
                     "mx-auto max-w-prose text-center text-base lg:max-w-none"
                   }
                 >
-                    <PortableText value={firstHalfBody} />
+                  <PortableText value={firstHalfBody} />
                 </div>
                 <div className="flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg">
                   <Image

@@ -16,6 +16,7 @@ import Section from "@/animations/section";
 import SectionRight from "@/animations/sectionRight";
 import SectionUp from "@/animations/sectionUp";
 import { Poppins } from "next/font/google";
+import InstallButton from "@/components/InstallButton";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -93,16 +94,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 Organic small batch cannabis grown in the heart of western
                 Montana
               </p>
-              <Link href="/menu">
-                <p
-                  className={
-                    poppins.className +
-                    "inline-block px-10 py-3 text-base font-medium text-white bg-green-800 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
-                  }
-                >
-                  Shop Now
-                </p>
-              </Link>
+              <InstallButton  />
             </div>
           </div>
           <Section>

@@ -1,22 +1,23 @@
 /** @type {import('next').NextConfig} */
+const withPWA = require('next-pwa')({
+  dest: 'public',
+})
 
-
-import withPWA from 'next-pwa'
-
-
-
-const nextConfig = {
+module.exports = withPWA({
+  // config
   reactStrictMode: true,
   images: {
     domains: ['cdn.sanity.io','images.unsplash.com'],
   },
-  pwa: {
-    dest: 'public', // this will be used to output service-worker.js
+   pwa: {
+    dest: 'public',
     register: true,
     skipWaiting: true,
     offlinePage: '/offline', // add the route to your offline page
+
+    disable: process.env.NODE_ENV === 'development',
+    scope: '/',
+    sw: 'service-worker.js',
+    // runtimeCaching,
   },
-}
-
-
-export default nextConfig
+})
