@@ -20,8 +20,8 @@ import { Poppins } from "next/font/google";
 const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
-  variable: "--font-popins",
-  weight: "300",
+  variable: "--font-helvetica",
+  weight: "400",
 });
 
 

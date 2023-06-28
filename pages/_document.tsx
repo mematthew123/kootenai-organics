@@ -16,7 +16,7 @@ export default function Document() {
         />
         <meta property="og:title" content="Kootenai Organics" key="title" />
         <meta property="og:description" content=" Missoula's premier organic cannabis and lifestyle brand" />
-        <meta property="og:image" content="public/canopy.jpg" />
+        <meta property="og:image" content="/canopy.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
