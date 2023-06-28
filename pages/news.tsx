@@ -5,6 +5,8 @@ import Layout from "@/components/Layout";
 import Navbar from "@/components/Navbar";
 import { Fraunces, Poppins } from "next/font/google";
 import { getAllCategories } from "@/sanity/queries/getAllCategories";
+import Head from "next/head";
+import Image from "next/image";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -66,6 +68,15 @@ const News = ({ posts, categories }: Props) => {
 
   return (
     <>
+          <Head>
+        <title>
+          Kootanei Organics | Organic small batch cannabis in western Montana
+        </title>
+        <meta
+          name="description"
+          content="Discover Kootanei Organics and our range of organic small batch cannabis products grown in the heart of western Montana. Shop for vapes, pre-rolls, edibles and more."
+        />
+      </Head>
       <Navbar />
       <Layout>
         <div className="bg-[#E9EDC9]   flex flex-col  items-center p-4 lg:p-10 space-y-4 lg:space-y-10 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto my-20 rounded-md shadow-lg border border-gray-200">
@@ -116,10 +127,12 @@ const News = ({ posts, categories }: Props) => {
               .map((post) => (
                 <Link href={`/posts/${post.slug}`} key={post._id}>
                   <div className="rounded-lg shadow-md overflow-hidden transition-transform duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
-                    <img
+                    <Image
                       src={post.imageUrl}
                       alt={post.alt}
                       className="w-full h-64 object-cover"
+                      width={500}
+                      height={500}
                     />
                     <div className="p-6 bg-white">
                       <h2 className="text-2xl font-semibold mb-2 text-gray-900">

@@ -5,6 +5,7 @@ import React from "react";
 import { getContactUs } from "@/sanity/queries/getContactUs";
 import { PortableText } from "@portabletext/react";
 import { Fraunces, Poppins } from "next/font/google";
+import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -52,6 +53,15 @@ const inter = Fraunces({
 const Contact = ({ contactUsContent }: Props) => {
   return (
     <div>
+            <Head>
+        <title>
+          Kootanei Organics | Organic small batch cannabis in western Montana
+        </title>
+        <meta
+          name="description"
+          content="Discover Kootanei Organics and our range of organic small batch cannabis products grown in the heart of western Montana. Shop for vapes, pre-rolls, edibles and more."
+        />
+      </Head>
       <Navbar />
       <Layout>
         <div className="bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200">
