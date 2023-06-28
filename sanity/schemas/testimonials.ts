@@ -10,16 +10,21 @@ export default defineType({
             title: 'Name',
             type: 'string',
         }),
-        defineField({
-            name: 'title',
-            title: 'Title',
-            type: 'string',
-        }),
+        // defineField({
+        //     name: 'title',
+        //     title: 'Title',
+        //     type: 'string',
+        // }),
         defineField({
             name: 'quote',
             title: 'Quote',
             type: 'text',
         }),
+        // defineField({
+        //     name: 'image',
+        //     title: 'Image',
+        //     type: 'image',
+        // }),
     ],
 })
 
