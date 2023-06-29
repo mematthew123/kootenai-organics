@@ -19,12 +19,16 @@ const Landing = () => {
   
     if (error) {
       console.error("Error: ", error);
+      alert("An error occurred. Please try again."); // error alert
     } else {
-      console.log("Successfully inserted email address. ");
+      console.log("Successfully inserted email address.");
       setEmail(""); // clear the email field
+      alert("Thank you for signing up!"); // success alert
     }
   };
   
+
+
 
   return (
     <Layout>
@@ -47,6 +51,7 @@ const Landing = () => {
             <button
               className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
               type="submit"
+
             >
               Sign Up
             </button>
