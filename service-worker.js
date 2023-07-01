@@ -21,16 +21,3 @@ self.addEventListener('install', event => {
     );
   });
   
-  self.addEventListener('activate', event => {
-    var cacheWhitelist = ['v1'];
-    event.waitUntil(
-      caches.keys().then(keyList => {
-        return Promise.all(keyList.map(key => {
-          if (cacheWhitelist.indexOf(key) === -1) {
-            return caches.delete(key);
-          }
-        }));
-      })
-    );
-  });
-  

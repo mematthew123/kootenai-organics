@@ -94,7 +94,8 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 Organic small batch cannabis grown in the heart of western
                 Montana
               </p>
-              <InstallButton  />
+
+              <p className='poppins text-xl font-light text-indigo-600'>PWA Demo</p>
             </div>
           </div>
           <Section>
