@@ -46,14 +46,10 @@ const inter = Fraunces({
   weight: "900",
 });
 
-
-
-
-
 const Contact = ({ contactUsContent }: Props) => {
   return (
     <div>
-            <Head>
+      <Head>
         <title>
           Kootanei Organics | Organic small batch cannabis in western Montana
         </title>
