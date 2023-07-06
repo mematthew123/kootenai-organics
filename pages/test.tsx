@@ -5,6 +5,9 @@ import { client } from "@/sanity/lib/client";
 import Featured from "@/components/Featured";
 import Reviews from "@/components/Reviews";
 import Testimonials from "@/components/Testimonials";
+import InstallButton from "@/components/InstallButton";
+import Layout from "@/components/Layout";
+import Navbar from "@/components/Navbar";
 
 export const getStaticProps: GetStaticProps = async () => {
   const featuredData = await client.fetch(`
@@ -30,9 +33,13 @@ const testPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <div>
+      <Navbar />
+      <Layout >
+      <InstallButton />
       <Featured featuredData={featuredData} />
       <Testimonials />
       <Reviews />
+      </Layout>
     </div>
   );
 };
