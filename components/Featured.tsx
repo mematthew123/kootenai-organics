@@ -68,11 +68,9 @@ const Featured: React.FC<{ featuredData: FeaturedData }> = ({
           >
             {featuredData.title}
           </h2>
-            <p className="font-poppins text-lg text-gray-600 mx-auto mb-8"
-              
-            >
-              {featuredData.description}
-            </p>
+          <p className="font-poppins text-lg text-gray-600 mx-auto mb-8">
+            {featuredData.description}
+          </p>
           <Link href="/menu">
             <p
               className={
