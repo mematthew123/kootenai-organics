@@ -1,4 +1,5 @@
-import { Fragment, ReactNode, SVGProps } from 'react';
+import Link from 'next/link';
+import { SVGProps } from 'react';
 
 const navigation = [
     {
@@ -81,6 +82,13 @@ const navigation = [
               &copy; 2023 Kootanie, Organics. All rights reserved.
             </p>
           </div>
+          {/* <div className="mt-8 md:order-1 md:mt-0">
+           <Link href="/wholesale">
+            <p className="text-center text-xs leading-5 text-gray-800 cursor-pointer">
+              Wholesale
+            </p>
+            </Link>
+          </div> */}
         </div>
       </footer>
     )

@@ -17,7 +17,9 @@ import contactUsPage from './schemas/contactUsPage'
 import testimonials from './schemas/testimonials'
 import whyUs from './schemas/whyUs'
 import mainContent from './schemas/mainContent'
+import wholesaleProducts from './schemas/wholesaleProducts'
+import whitelistedEmail from './schemas/whitelistedEmail'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [banner,hero,featured,menu,mainContent, testimonials, post, category, blockContent,aboutUsPage,contactUsPage],
+  types: [banner,hero,featured,menu,mainContent, testimonials, post, category, blockContent,aboutUsPage,contactUsPage,wholesaleProducts,whitelistedEmail],
 }
