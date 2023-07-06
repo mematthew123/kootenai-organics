@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async () => {
     client.fetch(`
     *[_type == "mainContent"][0]{
       title,
-      description,
+      body,
       "mainImage": mainImage.asset->url,
       "alt": mainImage.alt,
       textPosition

@@ -1,14 +1,9 @@
 import React, { useRef } from "react";
-import Link from "next/link";
 import { useInView } from "framer-motion";
 import Image from "next/image";
 import { Fraunces, Poppins } from "next/font/google";
-import Section from "@/animations/section";
-import SectionRight from "@/animations/sectionRight";
 import SectionUp from "@/animations/sectionUp";
 import { CameraIcon } from "@heroicons/react/20/solid";
-import { useEffect, useState } from "react";
-import { client } from "../sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 
 const inter = Fraunces({
@@ -25,14 +20,13 @@ const poppins = Poppins({
   weight: "800",
 });
 
-type TextPosition = "left" | "center" | "right";
 
 interface MainContentData {
   title: string;
   description: string;
   mainImage: string;
   alt: string;
-  textPosition: TextPosition;
+  body: any;
 }
 
 const Content: React.FC<{ mainContentData: MainContentData }> = ({
@@ -41,15 +35,8 @@ const Content: React.FC<{ mainContentData: MainContentData }> = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const textPositionClasses: Record<TextPosition, string> = {
-    left: "lg:items-start lg:text-left",
-    center: "items-center text-center",
-    right: "lg:items-end lg:text-right",
-  };
 
-  const positionClass =
-    textPositionClasses[mainContentData.textPosition] ||
-    textPositionClasses.center;
+
 
   return (
     <>
@@ -123,9 +110,9 @@ const Content: React.FC<{ mainContentData: MainContentData }> = ({
             </div>
             <div className="mt-8 lg:mt-0">
               <SectionUp>
-                <p className=" font-poppins mx-auto max-w-prose text-gray-600 text-large font-light lg:max-w-none">
-                  {mainContentData.description}
-                </p>
+                <div className=" font-poppins mx-auto max-w-prose text-gray-600 text-large font-light lg:max-w-none">
+                  <PortableText value={mainContentData.body} />
+                </div>
                 {/* </div> */}
               </SectionUp>
             </div>
