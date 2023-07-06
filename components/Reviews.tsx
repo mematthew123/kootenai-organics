@@ -52,7 +52,7 @@ export default function Reviews() {
                   <h3 className="text-sm font-medium text-gray-900">{review.title}</h3>
 
                   <div
-                    className="mt-3 space-y-6 text-sm text-gray-500"
+                    className="mt-3 space-y-6 text-sm text-gray-600"
                     dangerouslySetInnerHTML={{ __html: review.content }}
                   />
                 </div>
@@ -62,7 +62,7 @@ export default function Reviews() {
                 <p className="font-medium text-gray-900">{review.author}</p>
                 <time
                   dateTime={review.datetime}
-                  className="ml-4 border-l border-gray-200 pl-4 text-gray-500 lg:ml-0 lg:mt-2 lg:border-0 lg:pl-0"
+                  className="ml-4 border-l border-gray-200 pl-4 text-gray-600 lg:ml-0 lg:mt-2 lg:border-0 lg:pl-0"
                 >
                   {review.date}
                 </time>

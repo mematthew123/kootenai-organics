@@ -80,31 +80,31 @@ const Navbar = () => {
           <ul>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-500"
+              className="p-4 text-4xl hover:text-gray-600"
             >
               <Link href="/">Home</Link>
             </li>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-500"
+              className="p-4 text-4xl hover:text-gray-600"
             >
               <Link href="/menu">Shop</Link>
             </li>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-500"
+              className="p-4 text-4xl hover:text-gray-600"
             >
               <Link href="/about">About</Link>
             </li>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-500"
+              className="p-4 text-4xl hover:text-gray-600"
             >
               <Link href="/contact">Contact</Link>
             </li>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-500"
+              className="p-4 text-4xl hover:text-gray-600"
             >
               <Link href="/news">News</Link>
             </li>

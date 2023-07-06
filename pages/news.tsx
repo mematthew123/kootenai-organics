@@ -110,7 +110,7 @@ const News = ({ posts, categories }: Props) => {
                 className={`py-2 px-4 text-sm font-medium rounded-md ${
                   currentFilter === category.title
                     ? "bg-gray-900 text-white"
-                    : "text-gray-500 bg-white border border-gray-300 hover:bg-gray-100"
+                    : "text-gray-600 bg-white border border-gray-300 hover:bg-gray-100"
                 } transition-colors duration-300 ease-in-out shadow-md`}
               >
                 {category.title}

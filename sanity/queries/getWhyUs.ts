@@ -1,7 +1,5 @@
 import {client} from '../lib/client';
-
-
-const getWhyUs = async () => {
+export async function getWhyUs() {
     const whyUs = await client.fetch(`
         *[_type == "whyUs"] {
         title,
@@ -9,8 +7,7 @@ const getWhyUs = async () => {
         }
     `)
 
+    console.log(whyUs); // Add this line
+
     return whyUs;
-    }
-
-
-export default getWhyUs;
+}

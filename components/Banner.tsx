@@ -35,7 +35,7 @@ const Banner = () => {
       <h1 className="font-sans text-lg lg:text-2xl font-semibold">{bannerText}</h1>
       <button
         onClick={handleClose}
-        className="absolute top-0 right-0 mt-3 lg:mt-5 mr-3 lg:mr-5 text-gray-500 hover:text-gray-700 transition-colors duration-200"
+        className="absolute top-0 right-0 mt-3 lg:mt-5 mr-3 lg:mr-5 text-gray-600 hover:text-gray-700 transition-colors duration-200"
       >
         <AiOutlineClose size={24} />
       </button>

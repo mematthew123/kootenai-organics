@@ -6,8 +6,8 @@ export default function Document() {
       <Head>
         {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
         <meta charSet="utf-8" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/canopy.jpg" />
+        <link rel="apple-touch-icon" href="/canopy.jpg" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
         <meta

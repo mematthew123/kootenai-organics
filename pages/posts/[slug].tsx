@@ -8,11 +8,11 @@ import { Poppins, Fraunces } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
 
-const bodyFont =Poppins({
+const bodyFont = Poppins({
   subsets: ["latin"],
   style: "normal",
   variable: "--font-helvetica",
-  weight: "400",
+  weight: "200",
 });
 
 const titleFont = Fraunces({
@@ -57,13 +57,9 @@ type Props = {
 
 const Post = ({ post }: Props) => {
   return (
-
-
     <>
       <Head>
-        <title>
-          {post.title} | Kootanei Organics
-        </title>
+        <title>{post.title} | Kootanei Organics</title>
         <meta
           name="description"
           content="Discover Kootanei Organics and our range of organic small batch cannabis products grown in the heart of western Montana. Shop for vapes, pre-rolls, edibles and more."
@@ -71,19 +67,36 @@ const Post = ({ post }: Props) => {
       </Head>
       <Navbar />
       <Layout>
-        <div className="my-20 lg:mt-52 p-4 mx-auto max-w-screen-lg">
-          <h1 className={titleFont.className + " text-6xl font-semibold mb-6 text-center text-gray-800"}>
-            {post.title}
-          </h1>
-          <Image
-            src={post.imageUrl}
-            alt={post.alt}
-            className="w-full h-64 object-cover mb-6 rounded-md shadow-lg aspect-auto"
-            width={500}
-            height={500}
-          />
-          <div className={bodyFont.className + " text-gray-600 text-lg leading-relaxed"}>
-            <PortableText value={post.body} />
+        <div className="bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-8 lg:p-16 space-y-8 lg:space-y-0 lg:space-x-8 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200">
+          <div
+            key={post.title}
+            className="p-8 lg:p-16 rounded-lg text-gray-800  max-w-7xl mx-auto"
+          >
+            <h2
+              className={
+                titleFont.className +
+                " text-4xl text-center lg:text-6xl font-semi-bold lg:mb-8 mb-6"
+              }
+            >
+              {post.title}
+            </h2>
+            <div className="flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg">
+              <Image
+                src={post.imageUrl}
+                alt={post.alt}
+                className=" h-1/2 w-1/2 object-cover mb-6 rounded-md shadow-lg aspect-square mx-auto "
+                width={800}
+                height={800}
+              />
+            </div>
+            <div
+              className={
+                bodyFont.className +
+                " text-gray-600 text-lg leading-relaxed mx-auto mb-8 "
+              }
+            >
+              <PortableText value={post.body} />
+            </div>
           </div>
         </div>
       </Layout>
