@@ -75,25 +75,18 @@ const Contact = ({ contactUsContent }: Props) => {
                 {content.title}
               </h2>
 
-              <div className="flex justify-center items-center mx-auto mb-12 overflow-hidden rounded-lg">
-                <Image
-                  src={content.topImageUrl}
-                  alt={content.topImageAlt}
-                  width={800}
-                  height={800}
-                  className="object-cover rounded-lg shadow-md"
-                />
-              </div>
+              <div className="relative my-10 flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg lg:h-[100vh]">
+                  <Image
+                    src={content.topImageUrl || "/burning.jpeg"}
+                    alt={content.topImageAlt}
+                    height={400}
+                    width={400}
+                    className=" w-full aspect-auto  z-0 rounded-lg shadow-md"
+                  />
+                </div>
 
-              <div
-                className={
-                  poppins.className +
-                  "mx-auto max-w-prose text-center text-base lg:max-w-none"
-                }
-              >
-                <p className="text-lg text-gray-600 mx-auto mb-10">
-                  <PortableText value={content.body} />
-                </p>
+              <div className=" font-poppins lg:my-32 my-10 mx-auto max-w-prose text-gray-600 text-large font-light lg:max-w-none">
+                <PortableText value={content.body} />
               </div>
 
               <div className="flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg">

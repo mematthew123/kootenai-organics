@@ -53,14 +53,6 @@ const AboutUs = ({ aboutUsContent }: Props) => {
       <Layout>
         <div className="bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200">
           {aboutUsContent.map((content) => {
-            const firstHalfBody = content.body.slice(
-              0,
-              Math.ceil(content.body.length / 2)
-            );
-            const secondHalfBody = content.body.slice(
-              Math.ceil(content.body.length / 2)
-            );
-
             return (
               <div key={content.title} className="p-6 lg:p-12rounded-lg text-gray-800  max-w-7xl mx-auto">
                 <h2
@@ -71,33 +63,20 @@ const AboutUs = ({ aboutUsContent }: Props) => {
                 >
                   {content.title}
                 </h2>
-                <div className="flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg">
+                <div className="relative my-10 flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg lg:h-[100vh]">
                   <Image
                     src={content.topImageUrl || "/burning.jpeg"}
                     alt={content.topImageAlt}
-                    width={800}
-                    height={800}
-                    className="object-cover rounded-lg shadow-md"
+          height={400}
+          width={400}
+                    className=" w-full   aspect-auto  z-0 rounded-lg shadow-md"
                   />
                 </div>
-                <div
-                  className={
-                    bodyFont.className +
-                    "mx-auto max-w-prose text-center text-base lg:max-w-none"
-                  }
-                >
-                  <p className="text-lg text-gray-600 mx-auto mb-8">
-                    <PortableText value={firstHalfBody} />
-                  </p>
+         
+                <div className=" font-poppins mx-auto max-w-prose text-gray-600 text-large font-light lg:max-w-none z-10">
+                    <PortableText value={content.body} />
                 </div>
                 <div className="flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg">
-                  <Image
-                    src={content.bottomImageUrl}
-                    alt={content.bottomImageAlt}
-                    width={800}
-                    height={800}
-                    className="object-cover rounded-lg shadow-md"
-                  />
                 </div>
                 <div
                   className={
@@ -106,7 +85,6 @@ const AboutUs = ({ aboutUsContent }: Props) => {
                   }
                 >
                   <p className="text-lg text-gray-600 mx-auto mb-8">
-                    <PortableText value={secondHalfBody} />
                   </p>
                 </div>
               </div>
