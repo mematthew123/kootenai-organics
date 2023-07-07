@@ -36,9 +36,12 @@ export default defineType({
       type: "string",
       options: {
         list: [
-          { title: 'Left', value: 'left' },
+          { title: 'Top Left', value: 'topLeft' },
+          { title: 'Top Right', value: 'topRight'},
           { title: 'Center', value: 'center' },
-          { title: 'Right', value: 'right' },
+          { title: 'Bottom Left', value: 'bottomLeft'},
+          { title: 'Bottom Right', value: 'bottomRight' },
+
         ],
         layout: 'radio', // display as radio buttons
       },

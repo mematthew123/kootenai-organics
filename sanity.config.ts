@@ -6,6 +6,8 @@ import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
+import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
+
 
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
@@ -24,5 +26,7 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
     unsplashImageAsset(),
+    simplerColorInput()
+
   ],
 })

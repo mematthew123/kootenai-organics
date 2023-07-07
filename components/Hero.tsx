@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
 
-type TextPosition = "left" | "center" | "right";
+type TextPosition = "topLeft" | "center" | "bottomRight" | "bottomLeft" | "topRight";
 
 interface HeroData {
   title: string;
@@ -14,9 +14,11 @@ interface HeroData {
 
 const Hero: React.FC<{ heroData: HeroData }> = ({ heroData }) => {
   const textPositionClasses: Record<TextPosition, string> = {
-    left: "justify-start items-start",
+    topLeft: "justify-start items-start",
     center: "justify-center items-center",
-    right: "justify-end items-end",
+    bottomRight: "justify-end items-end",
+    topRight: "justify-start items-end ",
+    bottomLeft: "justify-end items-start",
   };
 
   console.log(heroData.textPosition);
@@ -34,7 +36,7 @@ const Hero: React.FC<{ heroData: HeroData }> = ({ heroData }) => {
           draggable="false"
         />
         <div
-          className={`text-white m-4 absolute inset-0 flex flex-col text-center small:text-left small:p-32 ${positionClass}`}
+          className={`text-white m-4 absolute inset-0 flex flex-col text-center p-20 small:text-left small:p-32 ${positionClass}`}
         >
           <h2 className="text-4xl mb-4">{heroData.title}</h2>
           <p className=" flex font-extrabold text-xl text-center align-middle left-50% top-50%  text-base-regular max-w-[32rem] mb-6 drop-shadow-md shadow-black">

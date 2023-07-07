@@ -1,5 +1,7 @@
-export default {
-    name: 'special',
+import {defineField, defineType} from 'sanity'
+
+export default defineType({
+  name: 'special',
     title: 'Specials',
     type: 'document',
     fields: [
@@ -18,14 +20,14 @@ export default {
         title: 'Price',
         type: 'number',
       },
-      {
-        name: 'image',
-        title: 'Image',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
-      },
+      // {
+      //   name: 'image',
+      //   title: 'Image',
+      //   type: 'image',
+      //   options: {
+      //     hotspot: true,
+      //   },
+      // },
     ],
     preview: {
       select: {
@@ -34,4 +36,6 @@ export default {
       },
     },
   }
+)
+
   

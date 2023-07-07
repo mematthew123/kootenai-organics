@@ -30,19 +30,19 @@ export default defineType({
         },
       ],
     }),
-    defineField({
-      name: "textPosition",
-      title: "Text Position",
-      type: "string",
-      options: {
-        list: [
-          { title: 'Left', value: 'left' },
-          { title: 'Center', value: 'center' },
-          { title: 'Right', value: 'right' },
-        ],
-        layout: 'radio', // display as radio buttons
-      },
-    }),
+    // defineField({
+    //   name: "textPosition",
+    //   title: "Text Position",
+    //   type: "string",
+    //   options: {
+    //     list: [
+    //       { title: 'Left', value: 'left' },
+    //       { title: 'Center', value: 'center' },
+    //       { title: 'Right', value: 'right' },
+    //     ],
+    //     layout: 'radio', // display as radio buttons
+    //   },
+    // }),
   ],
   preview: {
     select: {
