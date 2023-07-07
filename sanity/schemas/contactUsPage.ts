@@ -30,21 +30,21 @@ export default defineType({
         title: 'Body',
         type: 'blockContent',
       }),
-    defineField({
-      name: 'bottomImage',
-      title: 'Bottom Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text',
-        }
-      ]
-    }),
+    // defineField({
+    //   name: 'bottomImage',
+    //   title: 'Bottom Image',
+    //   type: 'image',
+    //   options: {
+    //     hotspot: true,
+    //   },
+    //   fields: [
+    //     {
+    //       name: 'alt',
+    //       type: 'string',
+    //       title: 'Alternative Text',
+    //     }
+    //   ]
+    // }),
     defineField({
       name: 'days',
       title: 'Days',

@@ -17,7 +17,6 @@ import SectionUp from "@/animations/sectionUp";
 import { Poppins } from "next/font/google";
 import Hero from "@/components/Hero";
 
-
 const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
@@ -49,7 +48,9 @@ export const getStaticProps: GetStaticProps = async () => {
       description,
       "heroImage": heroImage.asset->url,
       "alt": heroImage.alt,
-      textPosition
+      textPosition,
+          textColor
+
     }
     `),
     client.fetch(`
@@ -63,7 +64,6 @@ export const getStaticProps: GetStaticProps = async () => {
     `),
   ]);
 
-
   return {
     props: {
       featuredData,
@@ -73,7 +73,6 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 60, // ISR, re-generate the site every 60 seconds if there's a request
   };
 };
-
 
 const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   featuredData, // add the featured product prop here
