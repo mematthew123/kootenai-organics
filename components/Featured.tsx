@@ -58,13 +58,11 @@ const Featured: React.FC<{ featuredData: FeaturedData }> = ({
           />
         </div>
 
-        <div
-          className={`flex-1 flex flex-col justify-center ${positionClass} space-y-4`}
-        >
+        <div className="flex-1 flex flex-col mx-auto justify-center text-left space-y-4">
           <h2
             className={
               inter.className +
-              " text-3xl text-center lg:text-4xl font-semi-bold text-gray-800 lg:mb-6 mt-10 mb-2 my-3"
+              " text-3xl  lg:text-4xl px-10 max-w-prose font-semi-bold text-gray-800 lg:mb-6 mt-10 mb-2 my-3"
             }
           >
             {featuredData.title}
@@ -72,16 +70,15 @@ const Featured: React.FC<{ featuredData: FeaturedData }> = ({
           <div
             className={
               poppins.className +
-              " text-gray-600 lg:my-32  max-w-prose leading-relaxed mx-auto mb-8 "
+              " text-gray-600 lg:my-32 px-10  max-w-prose leading-relaxed mx-auto mb-8 "
             }
           >
             <PortableText value={featuredData.body} />
-          </div>
           <Link href="/menu">
             <p
               className={
                 poppins.className +
-                "inline-block leading-loose text-center bg-green-800 text-gray-100 px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                "inline-block leading-loose text-center bg-green-800 text-gray-100 px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg lg:mb-6 mt-10 mb-2 my-3"
               }
             >
               Buy Now
@@ -89,6 +86,8 @@ const Featured: React.FC<{ featuredData: FeaturedData }> = ({
           </Link>
         </div>
       </div>
+      </div>
+
     </>
   );
 };
