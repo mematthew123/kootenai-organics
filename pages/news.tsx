@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from "react";
 import Link from "next/link";
 import { getAllPosts } from "@/sanity/queries/getAllPosts";
@@ -92,17 +93,18 @@ const News = ({ posts, categories }: Props) => {
             <div
               className={
                 poppins.className +
-                "mx-auto max-w-prose text-center text-base lg:max-w-none"
+                "mx-auto max-w-prose text-gray-600 text-center text-base lg:max-w-none"
               }
             >
               {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
-              elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin
-              eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.
-              Duis dapibus diam vel metus tempus vulputate.
+              <p>
+                Stay up to date with the latest news from Kootanei Organics.
+                From tips on growing your own cannabis to the latest product
+                releases, we'll keep you in the loop.
+              </p>
             </div>
           </div>
-          <div className="flex justify-center my-5  space-x-4">
+          <div className="flex justify-center my-8  space-x-4">
             {categories.map((category) => (
               <button
                 key={category._id}
@@ -126,7 +128,7 @@ const News = ({ posts, categories }: Props) => {
               )
               .map((post) => (
                 <Link href={`/posts/${post.slug}`} key={post._id}>
-                  <div className="rounded-lg shadow-md overflow-hidden transition-transform duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
+                  <div className=" mt-10 rounded-lg shadow-md overflow-hidden transition-transform duration-500 ease-in-out transform hover:scale-105 cursor-pointer">
                     <Image
                       src={post.imageUrl}
                       alt={post.alt}

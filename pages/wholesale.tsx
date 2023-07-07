@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import { client } from "@/sanity/lib/client";
 import { useRouter } from "next/router";
 import WholeSaleList from "@/components/WholeSaleList";
+import Navbar from "@/components/Navbar";
 
 type Props = {
   email: string;
@@ -38,6 +39,7 @@ const Wholesale = () => {
 
   return (
     <Layout>
+      <Navbar />
       <div className="flex flex-col items-center justify-center min-h-screen text-center py-20">
         {isAllowed ? (
           <WholeSaleList />

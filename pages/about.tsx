@@ -47,14 +47,20 @@ const AboutUs = ({ aboutUsContent }: Props) => {
     <div>
       <Head>
         <title>About Us | Our Story</title>
-        <meta name="description" content="Learn more about our story and our values." />
+        <meta
+          name="description"
+          content="Learn more about our story and our values."
+        />
       </Head>
       <Navbar />
       <Layout>
         <div className="bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200">
           {aboutUsContent.map((content) => {
             return (
-              <div key={content.title} className="p-6 lg:p-12rounded-lg text-gray-800  max-w-7xl mx-auto">
+              <div
+                key={content.title}
+                className="p-6 lg:p-12rounded-lg text-gray-800  max-w-7xl mx-auto"
+              >
                 <h2
                   className={
                     titleFont.className +
@@ -67,25 +73,27 @@ const AboutUs = ({ aboutUsContent }: Props) => {
                   <Image
                     src={content.topImageUrl || "/burning.jpeg"}
                     alt={content.topImageAlt}
-          height={400}
-          width={400}
-                    className=" w-full   aspect-auto  z-0 rounded-lg shadow-md"
+                    height={400}
+                    width={400}
+                    className=" w-full max-w-prose object-contain  aspect-auto  z-0 rounded-lg shadow-md"
                   />
                 </div>
-         
-                <div className=" font-poppins mx-auto max-w-prose text-gray-600 text-large font-light lg:max-w-none z-10">
-                    <PortableText value={content.body} />
+
+                <div
+              className={
+                bodyFont.className +
+                " text-gray-600 text-lg max-w-prose leading-relaxed mx-auto mb-8 "
+              }
+            >                  <PortableText value={content.body} />
                 </div>
-                <div className="flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg">
-                </div>
+                <div className="flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg"></div>
                 <div
                   className={
                     bodyFont.className +
                     "mx-auto max-w-prose text-center text-base lg:max-w-none"
                   }
                 >
-                  <p className="text-lg text-gray-600 mx-auto mb-8">
-                  </p>
+                  <p className="text-lg text-gray-600 mx-auto mb-8"></p>
                 </div>
               </div>
             );

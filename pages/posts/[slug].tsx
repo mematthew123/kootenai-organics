@@ -84,7 +84,7 @@ const Post = ({ post }: Props) => {
               <Image
                 src={post.imageUrl}
                 alt={post.alt}
-                className=" h-1/2 w-1/2 object-cover mb-6 rounded-md shadow-lg aspect-square mx-auto "
+                className="   mb-6 rounded-md max-w-prose shadow-lg aspect-square mx-auto "
                 width={800}
                 height={800}
               />
@@ -92,7 +92,7 @@ const Post = ({ post }: Props) => {
             <div
               className={
                 bodyFont.className +
-                " text-gray-600 text-lg leading-relaxed mx-auto mb-8 "
+                " text-gray-600 text-lg max-w-prose leading-relaxed mx-auto mb-8 "
               }
             >
               <PortableText value={post.body} />

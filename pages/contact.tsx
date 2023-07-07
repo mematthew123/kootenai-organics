@@ -10,7 +10,7 @@ import Head from "next/head";
 const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
-  variable: "--font-display",
+  variable: "--font-helvetica",
   weight: "200",
 });
 
@@ -76,16 +76,22 @@ const Contact = ({ contactUsContent }: Props) => {
               </h2>
 
               <div className="relative my-10 flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg lg:h-[100vh]">
-                  <Image
-                    src={content.topImageUrl || "/burning.jpeg"}
-                    alt={content.topImageAlt}
-                    height={400}
-                    width={400}
-                    className=" w-full aspect-auto  z-0 rounded-lg shadow-md"
-                  />
-                </div>
+                <Image
+                  src={content.topImageUrl || "/burning.jpeg"}
+                  alt={content.topImageAlt}
+                  height={400}
+                  width={400}
+                  className=" w-full aspect-auto max-w-prose  z-0 rounded-lg shadow-md"
+                />
+              </div>
 
-              <div className=" font-poppins lg:my-32 my-10 mx-auto max-w-prose text-gray-600 text-large font-light lg:max-w-none">
+              <div
+                className={
+                  poppins.className +
+                  " text-gray-600 lg:my-32 text-lg max-w-prose leading-relaxed mx-auto mb-8 "
+                }
+              >
+                {" "}
                 <PortableText value={content.body} />
               </div>
 

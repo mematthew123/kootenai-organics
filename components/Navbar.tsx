@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { Barlow } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-const barlow = Barlow({
+const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
   variable: "--font-display",
@@ -43,7 +43,7 @@ const Navbar = () => {
             <span className="text-green-800">KO</span>Logo
           </h1>
         </Link>
-        <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
+        <ul  className="hidden sm:flex font-poppins text-gray-800 ">
           <li className="p-4">
             <Link href="/">Home</Link>
           </li>
@@ -115,7 +115,7 @@ const Navbar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-600"
             >
-              <Link href="/wholesale">wholesale</Link>
+              <Link href="/wholesale">Wholesale</Link>
             </li>
           </ul>
         </div>

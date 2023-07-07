@@ -34,7 +34,7 @@ const inter = Fraunces({
 const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
-  variable: "--font-display",
+  variable: "--font-helvetica",
   weight: "200",
 });
 
@@ -49,12 +49,18 @@ const WhyUs = () => {
         >
           Why Choose Us?
         </h2>
-        <p className="mx-auto text-center flex justify-center font-poppins font-light lg:text-lg text-gray-600">
+        <div
+          className={
+            poppins.className +
+            " text-base leading-relaxed mx-auto mb-8   max-w-prose text-gray-600   lg:max-w-none"
+          }
+        >
+          {" "}
           We have over 15 years of experience in the cannabis industry and we
           are passionate about exceeding your expectations. We love our
           customers and welcome your feedback and suggestions. Use our Contact
-          Us page to tell us what we’re doing right or what we can improve on.
-        </p>
+          Us page to get in touch with us.
+        </div>
       </div>
       {/* features container */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

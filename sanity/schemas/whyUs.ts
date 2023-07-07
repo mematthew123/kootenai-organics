@@ -15,6 +15,27 @@ export default defineType({
             title: "Description",
             type: "text",
         }),
+        defineField({
+            name: "features",
+            title: "Features",
+            type: "array",
+            of: [
+                {
+                    type: "object",
+                    fields: [
+                        {
+                            name: "title",
+                            title: "Title",
+                            type: "string",
+                        },
+                        {
+                            name: "description",
+                            title: "Description",
+                            type: "text",
+                        },
+                    ]
+                }
+            ],
+        }),
     ],
-}
-);
+});

@@ -2,7 +2,7 @@ export const getFeatured = `
 *[_type == "featured"][0]{
     _id,
     title,
-    description,
+    body,
     "imageUrl": featuredImage.asset->url,
     textPosition,
     }

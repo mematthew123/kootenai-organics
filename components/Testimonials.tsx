@@ -18,7 +18,6 @@ const inter = Fraunces({
   weight: "900",
 });
 
-
 type Testimonial = {
   name: string;
   quote: string;
@@ -26,7 +25,8 @@ type Testimonial = {
   imageUrl: string;
 };
 
-const imageUrl =  'https://images.unsplash.com/photo-1589691962030-8d2b7f2a1ffe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80'
+const imageUrl =
+  "https://images.unsplash.com/photo-1589691962030-8d2b7f2a1ffe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80";
 
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
@@ -39,19 +39,24 @@ export default function Testimonials() {
     <div className="bg-[#E9EDC9] mt-20 lg:mt-40 flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1100px] max-w-full mx-auto mb-20 rounded-md overflow-hidden shadow-lg border border-gray-200">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 bg-[#E9EDC9] py-24 sm:py-32">
         <div className="mx-auto max-w-xl text-center">
-        <h2
-                className={
-                  inter.className + " text-3xl font-extrabold text-gray-600"
-                }
-              >
-                The Reviews are in!
+          <h2
+            className={
+              inter.className + " text-3xl font-extrabold text-gray-800 mb-3"
+            }
+          >
+            The Reviews are in!
           </h2>
-          <p className=" font-poppins mt-2 text-xl font-bold  text-gray-800 sm:text-4xl">
+          <p
+            className={
+              inter.className +
+              " mt-2 text-xl font-bold  text-gray-600 sm:text-4xl"
+            }
+          >
             What our customers are saying
           </p>
         </div>
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
-        <SectionUp>
+          <SectionUp>
             <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
               {testimonials.map((testimonial, index) => (
                 <div
@@ -59,7 +64,7 @@ export default function Testimonials() {
                   className="pt-8 sm:inline-block sm:w-full sm:px-4"
                 >
                   <figure className="rounded-2xl bg-gray-50 p-8 text-sm leading-6 min-h-[200px]">
-                    <blockquote className="text-gray-900">
+                    <blockquote className="text-gray-600 font-poppins ">
                       <p>{`“${testimonial.quote}”`}</p>
                     </blockquote>
                     <figcaption className="mt-6 flex items-center gap-x-4">
@@ -71,10 +76,10 @@ export default function Testimonials() {
                         alt=""
                       />
                       <div>
-                        <div className="font-semibold text-gray-900">
+                        <div className="font-semibold font-poppins text-gray-800">
                           {testimonial.name}
                         </div>
-                        <div className="text-gray-600">{`@${testimonial.name}`}</div>
+                        <div className="font-poppins text-gray-600">{`@${testimonial.name}`}</div>
                       </div>
                     </figcaption>
                   </figure>

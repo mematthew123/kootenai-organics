@@ -2,7 +2,6 @@ import Link from "next/link";
 import WhyUs from "@/components/WhyUs";
 import { client } from "@/sanity/lib/client";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { getFeaturedProduct } from "@/sanity/queries/getProducts";
 import Navbar from "@/components/Navbar";
 import { Fraunces } from "next/font/google";
 import MenuBoard from "@/components/MenuBoard";
@@ -17,7 +16,6 @@ import SectionRight from "@/animations/sectionRight";
 import SectionUp from "@/animations/sectionUp";
 import { Poppins } from "next/font/google";
 import Hero from "@/components/Hero";
-import { getMainContent } from "@/sanity/queries/getMainContent";
 
 
 const poppins = Poppins({
@@ -39,7 +37,7 @@ export const getStaticProps: GetStaticProps = async () => {
     client.fetch(`
     *[_type == "featured"][0]{
       title,
-      description,
+      body,
       "featuredImage": featuredImage.asset->url,
       "alt": featuredImage.alt,
       textPosition

@@ -1,13 +1,17 @@
 import {client} from '../lib/client';
 export async function getWhyUs() {
     const whyUs = await client.fetch(`
-        *[_type == "whyUs"] {
+    *[_type == "whyUs"] {
+    title,
+    description,
+    features {
         title,
-        description,
-        }
-    `)
+        description
 
-    console.log(whyUs); // Add this line
-
+    }
+`)
+console.log(whyUs)
     return whyUs;
-}
+  }
+  
+  

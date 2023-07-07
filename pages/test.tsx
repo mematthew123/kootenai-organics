@@ -13,7 +13,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const featuredData = await client.fetch(`
   *[_type == "featured"][0]{
     title,
-    description,
+    body,
     "featuredImage": featuredImage.asset->url,
     "alt": featuredImage.alt,
     textPosition

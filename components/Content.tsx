@@ -16,8 +16,8 @@ const inter = Fraunces({
 const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
-  variable: "--font-display",
-  weight: "800",
+  variable: "--font-helvetica",
+  weight: "200",
 });
 
 
@@ -110,7 +110,12 @@ const Content: React.FC<{ mainContentData: MainContentData }> = ({
             </div>
             <div className="mt-8 lg:mt-0">
               <SectionUp>
-                <div className=" font-poppins mx-auto max-w-prose text-gray-600 text-large font-light lg:max-w-none">
+              <div
+              className={
+                poppins.className +
+                "  text-lg leading-relaxed mx-auto mb-8   max-w-prose text-gray-600  lg:max-w-none"
+              }
+            >
                   <PortableText value={mainContentData.body} />
                 </div>
                 {/* </div> */}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useInView } from "framer-motion";
 import Image from "next/image";
 import { Fraunces, Poppins } from "next/font/google";
+import { PortableText } from "@portabletext/react";
 
 const inter = Fraunces({
   subsets: ["latin"],
@@ -14,15 +15,15 @@ const inter = Fraunces({
 const poppins = Poppins({
   subsets: ["latin"],
   style: "normal",
-  variable: "--font-display",
-  weight: "800",
+  variable: "--font-helvetica",
+  weight: "200",
 });
 
 type TextPosition = "left" | "center" | "right";
 
 interface FeaturedData {
   title: string;
-  description: string;
+  body: any;
   featuredImage: string;
   alt: string;
   textPosition: TextPosition;
@@ -68,14 +69,19 @@ const Featured: React.FC<{ featuredData: FeaturedData }> = ({
           >
             {featuredData.title}
           </h2>
-          <p className="font-poppins text-lg text-gray-600 mx-auto mb-8">
-            {featuredData.description}
-          </p>
+          <div
+            className={
+              poppins.className +
+              " text-gray-600 lg:my-32  max-w-prose leading-relaxed mx-auto mb-8 "
+            }
+          >
+            <PortableText value={featuredData.body} />
+          </div>
           <Link href="/menu">
             <p
               className={
                 poppins.className +
-                "inline-block leading-loose bg-green-800 text-gray-100 px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                "inline-block leading-loose text-center bg-green-800 text-gray-100 px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
               }
             >
               Buy Now

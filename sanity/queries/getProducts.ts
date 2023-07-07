@@ -2,7 +2,7 @@ export const getFeaturedProduct = `
 *[_type == "product" && featured == true][0]{
   _id,
   title,
-  description,
+  body,
   type,
   productType,
   thc,
