@@ -86,8 +86,8 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           Kootanei Organics | Organic small batch cannabis in western Montana
         </title>
         <meta
-          name="description"
-          content="Discover Kootanei Organics and our range of organic small batch cannabis products grown in the heart of western Montana. Shop for vapes, pre-rolls, edibles and more."
+          name='description'
+          content='Discover Kootanei Organics and our range of organic small batch cannabis products grown in the heart of western Montana. Shop for vapes, pre-rolls, edibles and more.'
         />
       </Head>
       <div>
@@ -98,28 +98,28 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           {heroData ? (
             <Hero heroData={heroData} />
           ) : (
-            <div className="  max-w-[1240px] h-[100vh] m-auto flex flex-col justify-center items-center p-4 rounded-lg">
-              <div className=" flex flex-col justify-center items-center text-center sm:items-start space-y-6">
+            <div className='  max-w-[1240px] h-[100vh] m-auto flex flex-col justify-center items-center p-4 rounded-lg'>
+              <div className=' flex flex-col justify-center items-center text-center sm:items-start space-y-6'>
                 <h1
                   className={
-                    inter.className + " text-7xl font-extrabold text-gray-800"
+                    inter.className + " text-7xl font-extrabold text-[#423A30]"
                   }
                 >
                   Kootanei Organics
                 </h1>
                 <p
                   className={
-                    poppins.className + " text-xl font-light text-gray-600"
+                    poppins.className + " text-xl font-light text-[#423A30]"
                   }
                 >
                   Organic small batch cannabis grown in the heart of western
                   Montana
                 </p>
-                <Link href="/menu">
+                <Link href='/menu'>
                   <p
                     className={
                       poppins.className +
-                      "inline-block px-10 py-3 text-base font-medium text-white bg-green-800 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                      "inline-block px-10 py-3 text-base font-medium text-[#FBF4E2] bg-[#696B33] rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
                     }
                   >
                     Shop Now

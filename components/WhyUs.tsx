@@ -40,11 +40,11 @@ const poppins = Poppins({
 
 const WhyUs = () => {
   return (
-    <div className="container mt-20 lg:mt-40 mx-auto space-y-20 py-10 bg-[#FAEDCD] px-4 rounded-lg shadow-lg border border-gray-200">
-      <div className="  text-center space-y-10">
+    <div className='container mt-20 lg:mt-40 mx-auto space-y-20 py-10 bg-[#B85427] px-4 rounded-lg shadow-lg border border-gray-200'>
+      <div className='  text-center space-y-10'>
         <h2
           className={
-            inter.className + " text-4xl lg:text-5xl font-bold text-gray-800"
+            inter.className + " text-4xl lg:text-5xl font-bold text-[#FBF4E2]"
           }
         >
           Why Choose Us?
@@ -52,7 +52,7 @@ const WhyUs = () => {
         <div
           className={
             poppins.className +
-            " text-base leading-relaxed mx-auto mb-8   max-w-prose text-gray-600   lg:max-w-none"
+            " text-base leading-relaxed mx-auto mb-8   max-w-prose text-[#FBF4E2]   lg:max-w-none"
           }
         >
           {" "}
@@ -63,27 +63,27 @@ const WhyUs = () => {
         </div>
       </div>
       {/* features container */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         {features.map(({ title, description }, index) => (
           <div
             key={index}
-            className="bg-[#E9EDC9] flex flex-col items-center justify-center p-6 rounded-lg shadow-lg space-y-4"
+            className='bg-[#FBF4E2] flex flex-col items-center justify-center p-6 rounded-lg shadow-lg space-y-4'
           >
             <SectionRight>
-              <FaCannabis className="text-6xl text-gray-600" />
+              <FaCannabis className='text-6xl text-[#423A30]' />
             </SectionRight>
             <SectionUp>
               <h2
                 className={
                   inter.className +
-                  " leading-relaxed flex justify-center text-center text-2xl  text-gray-600"
+                  " leading-relaxed flex justify-center text-center text-2xl  text-[#423A30]"
                 }
               >
                 {title}
               </h2>
             </SectionUp>
             <SectionUp>
-              <p className=" mx-auto text-center flex justify-center font-poppins font-light lg:text-lg text-gray-600">
+              <p className=' mx-auto text-center flex justify-center font-poppins font-light lg:text-lg text-[#423A30]  '>
                 {description}
               </p>
             </SectionUp>

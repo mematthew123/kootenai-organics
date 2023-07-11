@@ -61,16 +61,16 @@ const Post = ({ post }: Props) => {
       <Head>
         <title>{post.title} | Kootanei Organics</title>
         <meta
-          name="description"
-          content="Discover Kootanei Organics and our range of organic small batch cannabis products grown in the heart of western Montana. Shop for vapes, pre-rolls, edibles and more."
+          name='description'
+          content='Discover Kootanei Organics and our range of organic small batch cannabis products grown in the heart of western Montana. Shop for vapes, pre-rolls, edibles and more.'
         />
       </Head>
       <Navbar />
       <Layout>
-        <div className="bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-8 lg:p-16 space-y-8 lg:space-y-0 lg:space-x-8 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200">
+        <div className='bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-8 lg:p-16 space-y-8 lg:space-y-0 lg:space-x-8 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200'>
           <div
             key={post.title}
-            className="p-8 lg:p-16 rounded-lg text-gray-800  max-w-7xl mx-auto"
+            className='p-8 lg:p-16 rounded-lg text-gray-800  max-w-7xl mx-auto'
           >
             <h2
               className={
@@ -80,13 +80,13 @@ const Post = ({ post }: Props) => {
             >
               {post.title}
             </h2>
-            <div className="flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg">
+            <div className='flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg'>
               <Image
                 src={post.imageUrl}
                 alt={post.alt}
-                className="   mb-6 rounded-md max-w-prose shadow-lg aspect-square mx-auto "
-                width={800}
-                height={800}
+                height={400}
+                width={400}
+                className=' w-full   aspect-auto  z-0 rounded-lg shadow-md'
               />
             </div>
             <div
