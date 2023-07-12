@@ -102,7 +102,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
               <div className=' flex flex-col justify-center items-center text-center sm:items-start space-y-6'>
                 <h1
                   className={
-                    inter.className + " text-7xl font-extrabold text-[#423A30]"
+                    inter.className + " text-7xl font-extrabold text-[#696B33]"
                   }
                 >
                   Kootanei Organics
