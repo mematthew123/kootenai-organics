@@ -5,7 +5,7 @@ import { Fraunces, Poppins } from "next/font/google";
 import SectionUp from "@/animations/sectionUp";
 import { CameraIcon } from "@heroicons/react/20/solid";
 import { PortableText } from "@portabletext/react";
-import styles from "./Content.module.css";
+import styles from "./content.module.css";
 
 const inter = Fraunces({
   subsets: ["latin"],
