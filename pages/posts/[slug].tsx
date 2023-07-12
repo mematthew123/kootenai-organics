@@ -7,6 +7,7 @@ import Layout from "@/components/Layout";
 import { Poppins, Fraunces } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
+import styles from "@/components/content.module.css";
 
 const bodyFont = Poppins({
   subsets: ["latin"],
@@ -90,10 +91,7 @@ const Post = ({ post }: Props) => {
               />
             </div>
             <div
-              className={
-                bodyFont.className +
-                " text-gray-600 text-lg max-w-prose leading-relaxed mx-auto mb-8 "
-              }
+              className={`${bodyFont.className} text-gray-600 text-lg max-w-prose leading-relaxed mx-auto mb-8 ${styles.portableText}`}
             >
               <PortableText value={post.body} />
             </div>
