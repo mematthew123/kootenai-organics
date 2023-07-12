@@ -39,7 +39,7 @@ const Navbar = () => {
       style={{ backgroundColor: `${color}` }}
       className='fixed left-0 top-0 w-full z-10 ease-in duration-300'
     >
-      <div className='flex text-slate-200 justify-between items-center w-full h-full px-2 2xl:px-16'>
+      <div className='flex text-[#FBF4E2] justify-between items-center w-full h-full px-2 2xl:px-16'>
         <Link href='/'>
           <Image
             src={navLogo}
@@ -50,22 +50,19 @@ const Navbar = () => {
           />
         </Link>
         <ul className='hidden sm:flex font-poppins text-[#423A30] '>
-          <li className='p-4'>
-            <Link href='/'>Home</Link>
+          <li className='p-4 hover:text-[#183B47] hover:underline'>
+            <Link href='/menu'>Menu</Link>
           </li>
-          <li className='p-4'>
-            <Link href='/menu'>Shop</Link>
-          </li>
-          <li className='p-4'>
+          <li className='p-4 hover:text-[#183B47] hover:underline'>
             <Link href='/about'>About</Link>
           </li>
-          <li className='p-4'>
+          <li className='p-4 hover:text-[#183B47] hover:underline'>
             <Link href='/contact'>Contact</Link>
           </li>
-          <li className='p-4'>
+          <li className='p-4 hover:text-[#183B47] hover:underline'>
             <Link href='/news'>News</Link>
           </li>
-          <li className='p-4'>
+          <li className='p-4 hover:text-[#183B47] hover:underline'>
             <Link href='/wholesale'>Wholesale</Link>
           </li>
         </ul>
@@ -73,9 +70,9 @@ const Navbar = () => {
         {/* Mobile Button */}
         <div onClick={handleNav} className='block sm:hidden z-10'>
           {nav ? (
-            <AiOutlineClose size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineClose size={20} className='text-[#FBF4E2]' />
           ) : (
-            <AiOutlineMenu size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineMenu size={20} className='text-[#423A30]' />
           )}
         </div>
         {/* Mobile Menu */}

@@ -81,7 +81,7 @@ const Contact = ({ contactUsContent }: Props) => {
                   alt={content.topImageAlt}
                   height={400}
                   width={400}
-                  className=' w-full   aspect-auto  z-0 rounded-lg shadow-md'
+                  className=' w-full aspect-auto z-0 rounded-lg shadow-md'
                 />
               </div>
 
@@ -122,7 +122,7 @@ const Contact = ({ contactUsContent }: Props) => {
                     href={`tel:${content.phone}`}
                     className={
                       poppins.className +
-                      "  bg-blue-600 text-white mx-auto mb-2 text-lg leading-relaxed py-6 px-10 lg:max-w-xl rounded-full transition-colors duration-300 ease-in-out hover:bg-blue-800"
+                      "  bg-[#696B33] text-white mx-auto mb-2 text-lg leading-relaxed py-6 px-10 lg:max-w-xl rounded-full transition-colors duration-300 ease-in-out hover:bg-[#183B47]"
                     }
                   >
                     Give Us A Call
@@ -131,7 +131,7 @@ const Contact = ({ contactUsContent }: Props) => {
                     href={`mailto:${content.email}`}
                     className={
                       poppins.className +
-                      "  bg-blue-600 text-white mx-auto mb-2 text-lg leading-relaxed py-6 px-10 lg:max-w-xl rounded-full transition-colors duration-300 ease-in-out hover:bg-blue-800"
+                      "  bg-[#696B33] text-white mx-auto mb-2 text-lg leading-relaxed py-6 px-10 lg:max-w-xl rounded-full transition-colors duration-300 ease-in-out hover:bg-[#183B47]"
                     }
                   >
                     Email Us

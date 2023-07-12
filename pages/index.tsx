@@ -98,7 +98,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           {heroData ? (
             <Hero heroData={heroData} />
           ) : (
-            <div className='  max-w-[1240px] h-[100vh] m-auto flex flex-col justify-center items-center p-4 rounded-lg'>
+            <div className='  max-w-[1240px] min-h-screen m-auto flex flex-col justify-center items-center p-4 overflow-y-hidden rounded-lg'>
               <div className=' flex flex-col justify-center items-center text-center sm:items-start space-y-6'>
                 <h1
                   className={
@@ -119,7 +119,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   <p
                     className={
                       poppins.className +
-                      "inline-block px-10 py-3 text-base font-medium text-[#FBF4E2] bg-[#696B33] rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                      "inline-block px-10 py-3 text-base font-medium text-[#FBF4E2] bg-[#696B33] rounded-lg hover:bg-[#183B47] transition-colors duration-200 shadow-md hover:shadow-lg"
                     }
                   >
                     Shop Now
@@ -128,6 +128,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </div>
             </div>
           )}
+
           {/* Featured section */}
           <Section>
             <Featured featuredData={featuredData} />

@@ -36,7 +36,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <div className='bg-[#CD8B2A] mt-20 lg:mt-40 flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1100px] max-w-full mx-auto mb-20 rounded-md overflow-hidden shadow-lg border border-gray-200'>
+    <div className='bg-[#FBF4E2] mt-20 lg:mt-40 flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1100px] max-w-full mx-auto mb-20 rounded-lg overflow-hidden shadow-lg border border-gray-200'>
       <div className='mx-auto max-w-7xl px-6 lg:px-8 bg-[#CD8B2A] py-24 sm:py-32'>
         <div className='mx-auto max-w-xl text-center'>
           <h2

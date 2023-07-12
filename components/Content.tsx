@@ -94,9 +94,9 @@ const Content: React.FC<{ mainContentData: MainContentData }> = ({
                       height={1376}
                     />
                   </div>
-                  <figcaption className='mt-3 flex text-sm text-gray-600'>
+                  <figcaption className='mt-3 flex text-sm text-[#183B47]'>
                     <CameraIcon
-                      className='h-5 w-5 flex-none text-gray-400'
+                      className='h-5 w-5 flex-none text-[#183B47]'
                       aria-hidden='true'
                     />
                     <span className='ml-2'>Photograph by Marcus O’Leary</span>

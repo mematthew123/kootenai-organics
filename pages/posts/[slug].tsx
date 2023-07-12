@@ -67,10 +67,10 @@ const Post = ({ post }: Props) => {
       </Head>
       <Navbar />
       <Layout>
-        <div className='bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-8 lg:p-16 space-y-8 lg:space-y-0 lg:space-x-8 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200'>
+        <div className='bg-[#FBF4E2] flex flex-col lg:flex-row items-center p-8 lg:p-16 space-y-8 lg:space-y-0 lg:space-x-8 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200'>
           <div
             key={post.title}
-            className='p-8 lg:p-16 rounded-lg text-gray-800  max-w-7xl mx-auto'
+            className='p-8 lg:p-16 rounded-lg text-[#423A30] max-w-7xl mx-auto'
           >
             <h2
               className={
@@ -86,13 +86,13 @@ const Post = ({ post }: Props) => {
                 alt={post.alt}
                 height={400}
                 width={400}
-                className=' w-full   aspect-auto  z-0 rounded-lg shadow-md'
+                className=' w-full aspect-auto z-0 rounded-lg shadow-md'
               />
             </div>
             <div
               className={
                 bodyFont.className +
-                " text-gray-600 text-lg max-w-prose leading-relaxed mx-auto mb-8 "
+                " text-[#423A30] text-lg max-w-prose leading-relaxed mx-auto mb-8 "
               }
             >
               <PortableText value={post.body} />
