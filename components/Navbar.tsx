@@ -2,6 +2,8 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Poppins } from "next/font/google";
+import Image from "next/image";
+import navLogo from "/public/Kootenai Organics_Primary Logo - Grass.png";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -35,87 +37,88 @@ const Navbar = () => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className="fixed left-0 top-0 w-full z-10 ease-in duration-300"
+      className='fixed left-0 top-0 w-full z-10 ease-in duration-300'
     >
-      <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-gray-100">
-        <Link href="/">
-          <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
-            <span className="text-green-800">KO</span>Logo
-          </h1>
+      <div className='flex text-[#FBF4E2] justify-between items-center w-full h-full px-2 2xl:px-16'>
+        <Link href='/'>
+          <Image
+            src={navLogo}
+            alt='/'
+            width={200}
+            height={200}
+            className='cursor-pointer'
+          />
         </Link>
-        <ul  className="hidden sm:flex font-poppins text-gray-800 ">
-          <li className="p-4">
-            <Link href="/">Home</Link>
+        <ul className='hidden sm:flex font-poppins text-[#423A30] '>
+          <li className='p-4 hover:text-[#183B47] hover:underline'>
+            <Link href='/menu'>Menu</Link>
           </li>
-          <li className="p-4">
-            <Link href="/menu">Shop</Link>
+          <li className='p-4 hover:text-[#183B47] hover:underline'>
+            <Link href='/about'>About</Link>
           </li>
-          <li className="p-4">
-            <Link href="/about">About</Link>
+          <li className='p-4 hover:text-[#183B47] hover:underline'>
+            <Link href='/contact'>Contact</Link>
           </li>
-          <li className="p-4">
-            <Link href="/contact">Contact</Link>
+          <li className='p-4 hover:text-[#183B47] hover:underline'>
+            <Link href='/news'>News</Link>
           </li>
-          <li className="p-4">
-            <Link href="/news">News</Link>
-          </li>
-          <li className="p-4">
-            <Link href="/wholesale">Wholesale</Link>
+          <li className='p-4 hover:text-[#183B47] hover:underline'>
+            <Link href='/wholesale'>Wholesale</Link>
           </li>
         </ul>
 
         {/* Mobile Button */}
-        <div onClick={handleNav} className="block sm:hidden z-10">
+        <div onClick={handleNav} className='block sm:hidden z-10'>
           {nav ? (
-            <AiOutlineClose size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineClose size={20} className='text-[#FBF4E2]' />
           ) : (
-            <AiOutlineMenu size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineMenu size={20} className='text-[#423A30]' />
           )}
         </div>
         {/* Mobile Menu */}
         <div
           className={
             nav
-              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
-              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-[#183B47] text-center ease-in duration-300"
+              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-[#183B47] text-center ease-in duration-300"
           }
         >
           <ul>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-600"
+              className='p-4 text-4xl hover:text-gray-600'
             >
-              <Link href="/">Home</Link>
+              <Link href='/'>Home</Link>
             </li>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-600"
+              className='p-4 text-4xl hover:text-gray-600'
             >
-              <Link href="/menu">Shop</Link>
+              <Link href='/menu'>Shop</Link>
             </li>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-600"
+              className='p-4 text-4xl hover:text-gray-600'
             >
-              <Link href="/about">About</Link>
+              <Link href='/about'>About</Link>
             </li>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-600"
+              className='p-4 text-4xl hover:text-gray-600'
             >
-              <Link href="/contact">Contact</Link>
+              <Link href='/contact'>Contact</Link>
             </li>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-600"
+              className='p-4 text-4xl hover:text-gray-600'
             >
-              <Link href="/news">News</Link>
+              <Link href='/news'>News</Link>
             </li>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-600"
+              className='p-4 text-4xl hover:text-gray-600'
             >
-              <Link href="/wholesale">Wholesale</Link>
+              <Link href='/wholesale'>Wholesale</Link>
             </li>
           </ul>
         </div>
