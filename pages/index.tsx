@@ -86,8 +86,8 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           Kootanei Organics | Organic small batch cannabis in western Montana
         </title>
         <meta
-          name="description"
-          content="Discover Kootanei Organics and our range of organic small batch cannabis products grown in the heart of western Montana. Shop for vapes, pre-rolls, edibles and more."
+          name='description'
+          content='Discover Kootanei Organics and our range of organic small batch cannabis products grown in the heart of western Montana. Shop for vapes, pre-rolls, edibles and more.'
         />
       </Head>
       <div>
@@ -98,8 +98,16 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           {heroData ? (
             <Hero heroData={heroData} />
           ) : (
-            <div className="  max-w-[1240px] h-[100vh] m-auto flex flex-col justify-center items-center p-4 rounded-lg">
-              <div className=" flex flex-col justify-center items-center text-center sm:items-start space-y-6">
+            <div className='  max-w-[1240px] h-[100vh] m-auto flex flex-col justify-center items-center p-4 rounded-lg'>
+              <p
+                className={
+                  poppins.className +
+                  "text-sm text-center bottom-0  font-light leading-6 text-gray-600 left-1/2"
+                }
+              >
+                ~Pure Enjoyment~
+              </p>
+              <div className=' flex flex-col justify-center items-center text-center sm:items-start space-y-6'>
                 <h1
                   className={
                     inter.className + " text-7xl font-extrabold text-gray-800"
@@ -115,7 +123,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   Organic small batch cannabis grown in the heart of western
                   Montana
                 </p>
-                <Link href="/menu">
+                <Link href='/menu'>
                   <p
                     className={
                       poppins.className +

@@ -8,6 +8,7 @@ import {deskTool} from 'sanity/desk'
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
 import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
 import { colorInput } from '@sanity/color-input'
+import { googleMapsInput } from '@sanity/google-maps-input'
 
 
 
@@ -21,7 +22,11 @@ export default defineConfig({
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
-  plugins: [
+plugins: [
+    googleMapsInput({
+      apiKey: "AIzaSyBdIJzRrBBSWIcTTL9Lr9UFEc7ikn3QoNY",
+      
+ }),
     deskTool(),
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
