@@ -26,6 +26,25 @@ const NewsLetter = () => {
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
+
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) {
+        throw new Error(res.statusText);
+      }
+
+      const response = await res.json();
+      console.log(response);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
