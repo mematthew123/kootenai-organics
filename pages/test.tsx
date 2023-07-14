@@ -10,6 +10,8 @@ import Layout from "@/components/Layout";
 import Navbar from "@/components/Navbar";
 import News from "./news";
 import NewsLetter from "@/components/NewsLetter";
+import SignupForm from "@/components/SignupForm";
+import EmailButton from "@/components/EmailButton";
 
 export const getStaticProps: GetStaticProps = async () => {
   const featuredData = await client.fetch(`
@@ -38,6 +40,8 @@ const testPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <Navbar />
       <Layout>
         <NewsLetter />
+        <SignupForm />
+        <EmailButton />
       </Layout>
     </div>
   );
