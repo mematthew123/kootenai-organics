@@ -43,7 +43,7 @@ const Content: React.FC<{ mainContentData: MainContentData }> = ({
           <div className='mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8'>
             <div>
               <h3
-                className={`${inter.className} mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl`}
+                className={`${inter.className} mt-2 text-3xl font-bold leading-8 tracking-tight text-[#423A30] sm:text-4xl`}
               >
                 {mainContentData.title}
               </h3>
@@ -108,7 +108,7 @@ const Content: React.FC<{ mainContentData: MainContentData }> = ({
             <div className='mt-8 lg:mt-0'>
               <SectionUp>
                 <div
-                  className={`${poppins.className} text-lg leading-relaxed mx-auto mb-8 space-y-10 max-w-prose text-gray-600  lg:max-w-none ${styles.portableText}`}
+                  className={`${poppins.className} text-lg leading-relaxed mx-auto mb-8 space-y-10 max-w-prose text-[#423A30]  lg:max-w-none ${styles.portableText}`}
                 >
                   <PortableText value={mainContentData.body} />
                 </div>

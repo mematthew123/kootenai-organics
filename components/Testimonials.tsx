@@ -41,7 +41,7 @@ export default function Testimonials() {
         <div className='mx-auto max-w-xl text-center'>
           <h2
             className={
-              inter.className + " text-3xl font-extrabold text-gray-800 mb-3"
+              inter.className + " text-3xl font-extrabold text-[#423A30] mb-3"
             }
           >
             We love our customers!
@@ -64,7 +64,7 @@ export default function Testimonials() {
                   className='pt-8 sm:inline-block sm:w-full sm:px-4'
                 >
                   <figure className='rounded-2xl bg-gray-50 p-8 text-sm leading-6 min-h-[200px]'>
-                    <blockquote className='text-gray-600 font-poppins '>
+                    <blockquote className='text-[#423A30] font-poppins '>
                       <p>{`“${testimonial.quote}”`}</p>
                     </blockquote>
                     <figcaption className='mt-6 flex items-center gap-x-4'>
@@ -76,7 +76,7 @@ export default function Testimonials() {
                         alt=''
                       />
                       <div>
-                        <div className='font-semibold font-poppins text-gray-800'>
+                        <div className='font-semibold font-poppins text-[#423A30]'>
                           {testimonial.name}
                         </div>
                         <div className='font-poppins text-gray-600'>{`@${testimonial.name}`}</div>

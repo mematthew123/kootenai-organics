@@ -44,23 +44,11 @@ const WhyUs = () => {
       <div className='  text-center space-y-10'>
         <h2
           className={
-            inter.className + " text-4xl lg:text-5xl font-bold text-gray-800"
+            inter.className + " text-4xl lg:text-5xl font-bold text-[#423A30]"
           }
         >
           Why Choose Us?
         </h2>
-        {/* <div
-          className={
-            poppins.className +
-            " text-base leading-relaxed mx-auto mb-8   max-w-prose text-gray-600   lg:max-w-none"
-          }
-        >
-          {" "}
-          We have over 15 years of experience in the cannabis industry and we
-          are passionate about exceeding your expectations. We love our
-          customers and welcome your feedback and suggestions. Use our Contact
-          Us page to get in touch with us.
-        </div> */}
       </div>
       {/* features container */}
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -70,20 +58,20 @@ const WhyUs = () => {
             className='bg-[#E9EDC9] flex flex-col items-center justify-center p-6 rounded-lg shadow-lg space-y-4'
           >
             <SectionRight>
-              <FaCannabis className='text-6xl text-gray-600' />
+              <FaCannabis className='text-6xl text-[#423A30]' />
             </SectionRight>
             <SectionUp>
               <h2
                 className={
                   inter.className +
-                  " leading-relaxed flex justify-center text-center text-2xl  text-gray-600"
+                  " leading-relaxed flex justify-center text-center text-2xl  text-[#423A30]"
                 }
               >
                 {title}
               </h2>
             </SectionUp>
             <SectionUp>
-              <p className=' mx-auto text-center flex justify-center font-poppins font-light lg:text-lg text-gray-600'>
+              <p className=' mx-auto text-center flex justify-center font-poppins font-light lg:text-lg text-[#423A30]'>
                 {description}
               </p>
             </SectionUp>

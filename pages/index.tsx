@@ -110,7 +110,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
               <div className=' flex flex-col justify-center items-center text-center sm:items-start space-y-6'>
                 <h1
                   className={
-                    inter.className + " text-7xl font-extrabold text-gray-800"
+                    inter.className + " text-7xl font-extrabold text-[#423A30]"
                   }
                 >
                   Kootanei Organics
@@ -127,7 +127,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   <p
                     className={
                       poppins.className +
-                      "inline-block px-10 py-3 text-base font-medium text-white bg-green-800 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+                      "inline-block px-10 py-3 text-base font-medium text-gray-50 bg-[#696B33] rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
                     }
                   >
                     Shop Now
