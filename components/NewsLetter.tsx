@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import { client } from "@/sanity/lib/client";
 import { useRouter } from "next/router";
+import axios from "axios";
 import { Poppins, Fraunces } from "next/font/google";
 
 const poppins = Poppins({
@@ -20,30 +21,19 @@ const inter = Fraunces({
 });
 
 const NewsLetter = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
-  const [isAllowed, setIsAllowed] = useState(false);
-  const router = useRouter();
 
-  const handleSubmit = async (event: { preventDefault: () => void }) => {
-    event.preventDefault();
-
+  const handleFormSubmit = async (event: { preventDefault: () => void }) => {
+    event.preventDefault(); // Prevent form from causing a page refresh
     try {
-      const res = await fetch("/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (!res.ok) {
-        throw new Error(res.statusText);
-      }
-
-      const response = await res.json();
-      console.log(response);
-    } catch (err) {
-      console.error(err);
+      setIsLoading(true);
+      await axios.post("/api/send", { email });
+      setEmail(""); // Clear the input field after sending the email
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
     }
   };
 
@@ -58,7 +48,7 @@ const NewsLetter = () => {
         <p className={`${poppins.className} mb-4`}>
           Sign up to our newsletter to get the latest news and updates.
         </p>
-        <form className='w-full max-w-sm mx-auto' onSubmit={handleSubmit}>
+        <form className='w-full max-w-sm mx-auto' onSubmit={handleFormSubmit}>
           <div className='flex items-center border-b-2 border-teal-500 py-2 justify-center'>
             <input
               className='appearance-none align-middle bg-transparent border-none w-3/4 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none'
@@ -69,10 +59,13 @@ const NewsLetter = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <button
-              className={`${poppins.className}flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded`}
-              type='submit'
+              type='submit' // Add type='submit' to make the form submit when this button is pressed
+              className={`flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded ${
+                isLoading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              disabled={isLoading}
             >
-              Sign up
+              {isLoading ? "Sending..." : "Send Email"}
             </button>
           </div>
         </form>
