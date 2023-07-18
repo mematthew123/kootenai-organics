@@ -36,7 +36,7 @@ export async function getStaticProps({ params }: Params) {
       post,
       fallback: "blocking",
     },
-    revalidate: 60, // ISR, re-generate the site every 60 seconds if there's a request
+    revalidate: 3, // ISR, re-generate the site every 3 seconds
   };
 }
 

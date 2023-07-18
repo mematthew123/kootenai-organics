@@ -31,7 +31,7 @@ export async function getStaticProps() {
       posts,
       categories,
     },
-    revalidate: 60, // Re-generate the post every minute
+    revalidate: 3, // In seconds
   };
 }
 
