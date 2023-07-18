@@ -113,7 +113,7 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     inter.className + " text-7xl font-extrabold text-[#423A30]"
                   }
                 >
-                  Kootanei Organics
+                  Kootenai Organics
                 </h1>
                 <p
                   className={
