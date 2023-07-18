@@ -34,7 +34,7 @@ export async function getStaticProps({ params }: Params) {
   return {
     props: {
       post,
-      fallback: false,
+      fallback: "blocking",
     },
     revalidate: 60, // ISR, re-generate the site every 60 seconds if there's a request
   };
