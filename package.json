@@ -27,7 +27,6 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "18.16.3",
     "@types/react": "18.2.1",
     "@types/react-dom": "18.2.2",
     "@vercel/analytics": "^1.0.1",
@@ -35,6 +34,7 @@
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
     "framer-motion": "^10.12.16",
+    "google-map-react": "^2.2.1",
     "next": "13.4.7",
     "next-pwa": "^5.6.0",
     "next-sanity": "^4.3.2",
@@ -53,5 +53,9 @@
     "tailwindcss": "3.3.2",
     "twilio": "^4.11.1",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/google-map-react": "^2.1.7",
+    "@types/node": "^20.4.2"
   }
 }
