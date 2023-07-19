@@ -51,12 +51,7 @@ export default defineType({
       type: 'array',
       of: [{type: 'string'}],
     }),
-    defineField({
-      name: 'hours',
-      title: 'Hours',
-      type: 'array',
-      of: [{type: 'string'}],
-    }), 
+
     defineField({
       name: 'phone',
       title: 'Phone Number',
@@ -67,10 +62,10 @@ export default defineType({
       title: 'Email',
       type: 'string',
     }),
-    defineField({
-      name: 'address',
-      title: 'Address',
-      type: 'string',
-    }),
+    // defineField({
+    //   name: 'address',
+    //   title: 'Address',
+    //   type: 'string',
+    // }),
   ]
 })

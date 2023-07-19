@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps = async () => {
       heroData,
       mainContentData, // pass the fetched main content data to your component
     },
-    revalidate: 60, // ISR, re-generate the site every 60 seconds if there's a request
+    revalidate: 3, // ISR, re-generate the site every 60 seconds if there's a request
   };
 };
 

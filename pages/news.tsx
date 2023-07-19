@@ -111,7 +111,7 @@ const News = ({ posts, categories }: Props) => {
                 onClick={() => handleFilter(category.title)}
                 className={`py-2 px-4 text-sm font-medium rounded-md ${
                   currentFilter === category.title
-                    ? "bg-gray-900 text-[#423A30]"
+                    ? "bg-green-700 text-white border border-green-700 hover:bg-green-800"
                     : "text-gray-600 bg-white border border-gray-300 hover:bg-gray-100"
                 } transition-colors duration-300 ease-in-out shadow-md`}
               >
