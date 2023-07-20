@@ -6,6 +6,7 @@ import { getContactUs } from "@/sanity/queries/getContactUs";
 import { PortableText } from "@portabletext/react";
 import { Fraunces, Poppins } from "next/font/google";
 import Head from "next/head";
+import Map from "@/components/Map";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -96,13 +97,14 @@ const Contact = ({ contactUsContent }: Props) => {
               </div>
 
               <div className='flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg'>
-                <iframe
-                  src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2727.4995036455716!2d-113.9951791236645!3d46.87322103833278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x535dce80198a2f23%3A0x6935f2b53e3d7212!2sMontana%20Medicinals%20-%20Open%20Regular%20Hours%20Serving%20All%20Adult%20Patients!5e0!3m2!1sen!2sus!4v1687743861679!5m2!1sen!2sus'
-                  width='800'
-                  height='600'
-                  loading='lazy'
-                  className='w-full h-64 lg:h-96 border-0 rounded-lg shadow-md'
-                />
+                <div className='flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg'>
+                  <Map
+                    position={{
+                      lat: 46.87322103833278,
+                      lng: -113.9951791236645,
+                    }}
+                  />
+                </div>
               </div>
 
               <div className='text-center pt-8'>
