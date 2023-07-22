@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,7 +9,12 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         fraunces: ["Fraunces", "serif"],
-        ElCaminoSoftEdges: ["El Camino", "regular"],
+        ElCaminoSoftEdges: ["El Camino ", "sans-serif"],
+        ElCaminoRegular: ["El Camino ", "sans-serif"],
+        ElCaminoOutline: ["El Camino ", "sans-serif"],
+        ElCaminoDrawings: ["El Camino", "sans-serif"],
+        ElCaminoSoftEdgesCaps: ["El Camino", "El Camino"],
+        ElCaminoTextureCaps: ["ElCaminoTextureCaps", "sans-serif"],
       },
     },
   },

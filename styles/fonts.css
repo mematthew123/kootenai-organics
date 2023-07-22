@@ -1,8 +1,53 @@
 @font-face {
-  font-family: "ElCaminoSoftEdges";
-  src: url("/public/fonts/EL CAMINO FONT COLLECCTION/EL CAMINO WOFF/ElCaminoSoftEdges.woff")
+  font-family: "El Camino";
+  src: url("/fonts/EL CAMINO FONT COLLECCTION/EL CAMINO WOFF/ElCaminoSoftEdges.woff")
     format("woff2");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "El Camino";
+  src: url("/fonts/EL CAMINO FONT COLLECCTION/EL CAMINO WOFF/ElCaminoRegular.woff")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "El Camino";
+  src: url("/fonts/EL CAMINO FONT COLLECCTION/EL CAMINO WOFF/ElCaminoOutline.woff")
+    format("woff2");
+  font-weight: lighter;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "El Camino";
+  src: url("/fonts/EL CAMINO FONT COLLECCTION/EL CAMINO WOFF/ElCaminoDrawings.ttf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "El Camino";
+  src: url("/fonts/EL CAMINO FONT COLLECCTION/EL CAMINO OTF/ElCamino-SoftEdges.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ElCaminoTextureCaps";
+  src: url("/fonts/EL CAMINO FONT COLLECCTION/EL CAMINO WOFF/ElCaminoTextureCaps.woff")
+    format("woff2");
+  font-weight: lighter;
   font-style: normal;
   font-display: swap;
 }
