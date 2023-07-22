@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "ElCaminoSoftEdges";
+  src: url("/public/fonts/EL CAMINO FONT COLLECCTION/EL CAMINO WOFF/ElCaminoSoftEdges.woff")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
