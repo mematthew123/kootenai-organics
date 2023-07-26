@@ -75,12 +75,7 @@ const Post = ({ post }: Props) => {
             key={post.title}
             className='p-8 lg:p-16 rounded-lg text-[#423A30] max-w-7xl mx-auto'
           >
-            <h2
-              className={
-                titleFont.className +
-                " text-4xl text-center lg:text-6xl font-semi-bold lg:mb-8 mb-6"
-              }
-            >
+            <h2 className=' font-ElCaminoTextureCaps text-4xl text-center lg:text-6xl font-semi-bold lg:mb-8 mb-6'>
               {post.title}
             </h2>
             <div className='flex justify-center items-center mx-auto mb-10 overflow-hidden rounded-lg'>

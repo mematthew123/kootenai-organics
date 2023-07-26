@@ -41,15 +41,14 @@ export default function Testimonials() {
         <div className='mx-auto max-w-xl text-center'>
           <h2
             className={
-              inter.className + " text-3xl font-extrabold text-[#423A30] mb-3"
+              " font-ElCaminoTextureCaps text-3xl font-extrabold text-[#423A30] mb-3"
             }
           >
             We love our customers!
           </h2>
           <p
             className={
-              inter.className +
-              " mt-2 text-xl font-bold  text-gray-600 sm:text-4xl"
+              " font-ElCaminoTextureCaps mt-2 text-xl font-bold  text-gray-600 sm:text-4xl"
             }
           >
             Hear what they have to say about us.

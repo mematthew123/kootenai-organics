@@ -5,6 +5,7 @@ import { useState } from "react";
 import blurStyles from "../components/blur.module.css";
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import "../styles/fonts.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isOpen, setIsOpen] = useState(true);
