@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity";
 
 export default defineType({
   name: "product",
-  title: "Product",
+  title: "Velvet Hammer Products",
   type: "document",
   fields: [
     defineField({
@@ -19,12 +19,12 @@ export default defineType({
         maxLength: 96,
       },
     }),
-    defineField({
-      name: "featured",
-      title: "Featured Product",
-      type: "boolean",
-      description: "Mark this checkbox if the product is a featured product"
-    }),
+    // defineField({
+    //   name: "featured",
+    //   title: "Featured Product",
+    //   type: "boolean",
+    //   description: "Mark this checkbox if the product is a featured product"
+    // }),
     defineField({
       name: "description",
       title: "Description",
@@ -34,11 +34,27 @@ export default defineType({
       name: "type",
       title: "Type",
       type: "string",
+      options: {
+        list: [
+          {title:"Hybrid",value: "hybrid"},
+          {title:"Indica",value: "indica"},
+          {title:"Sativa",value: "sativa"},
+        ]
+      }
+
     }),
     defineField({
       name: "productType",
       title: "Product Type",
+      // we want to restrict the options to a set of predefined values
       type: "string",
+      options: {
+        list: [
+          { title: "Chocolates", value: "chocolates" },
+          { title: "Gummies", value: "gummies" },
+          { title: "Tinctures", value: "tinctures" },
+        ]
+      }
     }),
     defineField({
       name: "thc",
@@ -50,15 +66,12 @@ export default defineType({
       title: "CBD",
       type: "number",
     }),
-    defineField({
-      name: "price",
-      title: "Price",
-      type: "number",
-    }),
-    defineField({
-      name: "size",
-      title: "Size",
-      type: "string",
+
+ defineField({
+      name: "ingredients",
+      title: "Ingredients",
+      type: "array",
+      of: [{ type: "string" }],
     }),
     defineField({
       name: "images",
@@ -77,18 +90,7 @@ export default defineType({
         },
       ],
     }),
-    defineField({
-      name: "vendor",
-      title: "Vendor",
-      type: "reference",
-      to: [{ type: "vendor" }], 
-    }),
-    defineField({
-      name: "collections",
-      title: "Collections",
-      type: "array",
-      of: [{ type: "reference", to: [{ type: "collections" }] }], 
-    }),
+    
   ],
 
   preview: {

@@ -54,6 +54,9 @@ const Navbar = () => {
             <Link href='/menu'>Menu</Link>
           </li>
           <li className='p-4 hover:text-[#183B47] hover:underline'>
+            <Link href='/hammer'>Velvet Hammer</Link>
+          </li>
+          <li className='p-4 hover:text-[#183B47] hover:underline'>
             <Link href='/about'>About</Link>
           </li>
           <li className='p-4 hover:text-[#183B47] hover:underline'>
@@ -94,7 +97,10 @@ const Navbar = () => {
               onClick={handleNav}
               className='p-4 text-4xl hover:text-gray-600'
             >
-              <Link href='/menu'>Shop</Link>
+              <Link href='/menu'>Menu</Link>
+            </li>
+            <li className='p-4 text-4xl hover:text-gray-600'>
+              <Link href='/hammer'>Velvet Hammer</Link>
             </li>
             <li
               onClick={handleNav}

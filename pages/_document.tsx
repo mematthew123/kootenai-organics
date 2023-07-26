@@ -18,7 +18,7 @@ export default function Document() {
         <meta name='theme-color' content='#000000' />
         <meta
           name='description'
-          content=" Missoula's premier organic cannabis and lifestyle brand, selling organic and sustainable cannabis products."
+          content="Missoula's premier organic cannabis and lifestyle brand, selling organic and sustainable cannabis products."
         />
         <meta property='og:title' content='Kootenai Organics' key='title' />
         <meta
