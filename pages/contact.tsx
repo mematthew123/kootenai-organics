@@ -69,8 +69,7 @@ const Contact = ({ contactUsContent }: Props) => {
             >
               <h2
                 className={
-                  inter.className +
-                  " text-4xl text-center lg:text-7xl font-semi-bold lg:mb-6 mb-4"
+                  " font-ElCaminoTextureCaps text-4xl text-center lg:text-7xl font-semi-bold lg:mb-6 mb-4"
                 }
               >
                 {content.title}
@@ -123,8 +122,7 @@ const Contact = ({ contactUsContent }: Props) => {
                   <a
                     href={`tel:${content.phone}`}
                     className={
-                      poppins.className +
-                      "  bg-[#696B33] text-gray-100 mx-auto mb-2 text-lg leading-relaxed py-6 px-10 lg:max-w-xl rounded-full transition-colors duration-300 ease-in-out hover:bg-blue-800"
+                      " font-ElCaminoTextureCaps bg-[#696B33] text-gray-100 mx-auto mb-2 text-lg leading-relaxed py-6 px-10 lg:max-w-xl rounded-full transition-colors duration-300 ease-in-out hover:bg-blue-800"
                     }
                   >
                     Give Us A Call
@@ -132,8 +130,7 @@ const Contact = ({ contactUsContent }: Props) => {
                   <a
                     href={`mailto:${content.email}`}
                     className={
-                      poppins.className +
-                      "  bg-[#696B33] text-gray-100 mx-auto mb-2 text-lg leading-relaxed py-6 px-10 lg:max-w-xl rounded-full transition-colors duration-300 ease-in-out hover:bg-blue-800"
+                      " font-ElCaminoTextureCaps bg-[#696B33] text-gray-100 mx-auto mb-2 text-lg leading-relaxed py-6 px-10 lg:max-w-xl rounded-full transition-colors duration-300 ease-in-out hover:bg-blue-800"
                     }
                   >
                     Email Us

@@ -61,8 +61,7 @@ const Featured: React.FC<{ featuredData: FeaturedData }> = ({
         <div className='flex-1 flex flex-col mx-auto justify-center text-left space-y-4'>
           <h2
             className={
-              inter.className +
-              " text-3xl  lg:text-4xl px-10 max-w-prose font-semi-bold text-[#423A30] lg:mb-6 mt-10 mb-2 my-3"
+              " font-ElCaminoTextureCaps text-3xl  lg:text-4xl px-10 max-w-prose font-semi-bold text-[#423A30] lg:mb-6 mt-10 mb-2 my-3"
             }
           >
             {featuredData.title}

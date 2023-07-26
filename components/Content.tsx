@@ -43,7 +43,9 @@ const Content: React.FC<{ mainContentData: MainContentData }> = ({
           <div className='mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8'>
             <div>
               <h3
-                className={`${inter.className} mt-2 text-3xl font-bold leading-8 tracking-tight text-[#423A30] sm:text-4xl`}
+                className={
+                  " font-ElCaminoTextureCaps mt-2 text-3xl font-bold leading-8 tracking-tight text-[#423A30] sm:text-4xl"
+                }
               >
                 {mainContentData.title}
               </h3>

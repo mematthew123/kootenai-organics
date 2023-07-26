@@ -7,36 +7,11 @@ import SectionUp from "@/animations/sectionUp";
 import { Fraunces, Poppins } from "next/font/google";
 import { client } from "@/sanity/lib/client";
 
-const features = [
-  {
-    title: "100% Organic",
-    description:
-      "Our cannabis is grown 100% organically, with no pesticides or herbicides.",
-  },
-  {
-    title: "Solventless",
-    description:
-      "We use only solventless extraction methods to ensure the highest quality.",
-  },
-  {
-    title: "Experienced",
-    description:
-      "We have over 15 years of experience in the cannabis industry.",
-  },
-];
-
 const inter = Fraunces({
   subsets: ["latin"],
   style: "normal",
   variable: "--font-fraunces",
   weight: "900",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  style: "normal",
-  variable: "--font-helvetica",
-  weight: "200",
 });
 
 const WhyUs = () => {
@@ -56,7 +31,7 @@ const WhyUs = () => {
       <div className='  text-center space-y-10'>
         <h2
           className={
-            inter.className + " text-4xl lg:text-5xl font-bold text-[#423A30]"
+            " font-ElCaminoTextureCaps text-4xl lg:text-5xl font-bold text-[#423A30]"
           }
         >
           Why Choose Us?
@@ -75,8 +50,7 @@ const WhyUs = () => {
             <SectionUp>
               <h2
                 className={
-                  inter.className +
-                  " leading-relaxed flex justify-center text-center text-2xl  text-[#423A30]"
+                  " font-ElCaminoTextureCaps leading-relaxed flex justify-center text-center text-2xl  text-[#423A30]"
                 }
               >
                 {title}

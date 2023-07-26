@@ -63,8 +63,7 @@ const AboutUs = ({ aboutUsContent }: Props) => {
               >
                 <h2
                   className={
-                    titleFont.className +
-                    " text-4xl text-center lg:text-7xl font-semi-bold lg:mb-6 mb-4"
+                    " font-ElCaminoTextureCaps text-4xl text-center lg:text-7xl font-semi-bold lg:mb-6 mb-4"
                   }
                 >
                   {content.title}
