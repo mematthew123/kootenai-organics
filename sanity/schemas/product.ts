@@ -19,12 +19,12 @@ export default defineType({
         maxLength: 96,
       },
     }),
-    defineField({
-      name: "featured",
-      title: "Featured Product",
-      type: "boolean",
-      description: "Mark this checkbox if the product is a featured product"
-    }),
+    // defineField({
+    //   name: "featured",
+    //   title: "Featured Product",
+    //   type: "boolean",
+    //   description: "Mark this checkbox if the product is a featured product"
+    // }),
     defineField({
       name: "description",
       title: "Description",
@@ -67,10 +67,11 @@ export default defineType({
       type: "number",
     }),
 
-    defineField({
-      name: "size",
-      title: "Size",
-      type: "string",
+ defineField({
+      name: "ingredients",
+      title: "Ingredients",
+      type: "array",
+      of: [{ type: "string" }],
     }),
     defineField({
       name: "images",

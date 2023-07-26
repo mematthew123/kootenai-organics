@@ -16,10 +16,11 @@ export const getStaticProps: GetStaticProps = async () => {
       description,
       type,
       productType,
+       terpenes,
+          ingredients,
       thc,
       cbd,
-      price,
-      size,
+  
       "imageUrl": images[0].asset->url,
     }
   `);
