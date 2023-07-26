@@ -47,7 +47,9 @@ const Wholesale = () => {
             <WholeSaleList />
           ) : (
             <>
-              <h1 className='text-4xl font-bold mb-4'>Wholesale customers</h1>
+              <h1 className=' font-ElCaminoTextureCaps text-4xl font-bold mb-4'>
+                Wholesale customers
+              </h1>
               <p className='mb-4'>
                 Please enter your email address to access our wholesale store.
               </p>

@@ -84,8 +84,7 @@ const News = ({ posts, categories }: Props) => {
           <div className='flex flex-col items-center justify-center p-6 lg:p-12rounded-lg text-[#423A30]  max-w-7xl mx-auto '>
             <h2
               className={
-                inter.className +
-                " text-4xl text-center lg:text-7xl font-semi-bold lg:mb-6 mb-4"
+                " font-ElCaminoTextureCaps text-4xl text-center lg:text-7xl font-semi-bold lg:mb-6 mb-4"
               }
             >
               Latest News
@@ -97,7 +96,7 @@ const News = ({ posts, categories }: Props) => {
               }
             >
               {" "}
-              <p>
+              <p className=' font-ElCaminoTextureCaps'>
                 Stay up to date with the latest news from Kootanei Organics.
                 From tips on growing your own cannabis to the latest product
                 releases, we'll keep you in the loop.
@@ -137,7 +136,7 @@ const News = ({ posts, categories }: Props) => {
                       height={500}
                     />
                     <div className='p-6 bg-white'>
-                      <h2 className='text-2xl font-semibold mb-2 text-gray-900'>
+                      <h2 className=' font-ElCaminoTextureCaps text-2xl font-semibold mb-2 text-gray-900'>
                         {post.title}
                       </h2>
                     </div>
