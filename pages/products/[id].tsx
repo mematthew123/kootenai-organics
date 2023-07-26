@@ -99,30 +99,32 @@ const ProductPage: React.FC<{ product: Product }> = ({ product }) => {
             <div className='w-full md:w-1/2 px-4'>
               <h1 className='text-4xl font-bold mb-4'>{product.title}</h1>
               <p className='text-gray-600 mb-4'>{product.description}</p>
-              <div className='grid grid-cols-2 gap-2'>
-                <div>
-                  <p className='font-bold text-md mb-2'>Type:</p>
-                  <span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-                    {product.type}
-                  </span>
-                </div>
-                <div>
-                  <p className='font-bold text-md mb-2'>THC:</p>
-                  <span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-                    {product.thc}%
-                  </span>
-                </div>
-                <div>
-                  <p className='font-bold text-md mb-2'>CBD:</p>
-                  <span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-                    {product.cbd}%
-                  </span>
-                </div>
-                <div>
-                  <p className='font-bold text-md mb-2'>Ingredients:</p>
-                  <span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-                    {formattedIngredients}
-                  </span>
+              <div className=' mx-auto px-10 items-center mb-4 flex justify-center border-gray-300 rounded-lg shadow-lg overflow-hidden'>
+                <div className='  grid grid-cols-4 gap-1'>
+                  <div>
+                    <p className='font-bold text-md mb-2'>Type:</p>
+                    <span className='inline-block  border-pink-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+                      {product.type}
+                    </span>
+                  </div>
+                  <div>
+                    <p className='font-bold text-md mb-2'>THC:</p>
+                    <span className='inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+                      {product.thc}%
+                    </span>
+                  </div>
+                  <div>
+                    <p className='font-bold text-md mb-2'>CBD:</p>
+                    <span className='inline-block  rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+                      {product.cbd}%
+                    </span>
+                  </div>
+                  <div>
+                    <p className='font-bold text-md mb-2'>Ingredients:</p>
+                    <span className='inline-block  rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+                      {formattedIngredients}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

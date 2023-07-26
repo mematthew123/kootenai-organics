@@ -99,14 +99,14 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <Hero heroData={heroData} />
           ) : (
             <div className='  max-w-[1240px] h-[100vh] m-auto flex flex-col justify-center items-center p-4 rounded-lg'>
-              <p
+              {/* <p
                 className={
                   poppins.className +
                   "text-sm text-center bottom-0  font-light leading-6 text-gray-600 left-1/2"
                 }
               >
                 ~Pure Enjoyment~
-              </p>
+              </p> */}
               <div className=' flex flex-col justify-center items-center text-center sm:items-start space-y-6'>
                 <h1
                   className={
@@ -115,6 +115,11 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 >
                   Kootenai Organics
                 </h1>
+                <img
+                  src='/enjoy.svg'
+                  alt='leaf'
+                  className=' w-56 items-center flex-col justify-start h-56'
+                />
                 <p
                   className={
                     poppins.className + " text-xl font-light text-gray-600"
