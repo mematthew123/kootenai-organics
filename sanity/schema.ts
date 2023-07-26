@@ -22,5 +22,5 @@ import whitelistedEmail from './schemas/whitelistedEmail'
 import feature from './schemas/feature'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [banner,hero,featured,menu,mainContent,feature, testimonials, post, category, blockContent,aboutUsPage,contactUsPage,wholesaleProducts,whitelistedEmail],
+  types: [banner,hero,featured,menu,mainContent,feature, testimonials, post, category, blockContent,aboutUsPage,contactUsPage,wholesaleProducts,whitelistedEmail,product,collections,],
 }
