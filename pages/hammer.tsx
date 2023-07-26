@@ -7,6 +7,10 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Layout from "@/components/Layout";
+// import { PortableText } from "@portabletext/react";
+
+//   To Do!
+//   update schema to include portable text and add to product page
 
 export const getStaticProps: GetStaticProps = async () => {
   const products = await client.fetch(`
@@ -94,7 +98,7 @@ const Hammer: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
               filteredProducts.map((product: Product) => (
                 <div
                   key={product._id}
-                  className='border bg-gray-50 border-gray-300 p-4 rounded-lg hover:shadow-lg transition duration-300 ease-in-out'
+                  className='border  border-gray-300 p-4 rounded-lg hover:shadow-lg transition duration-300 ease-in-out'
                 >
                   <Image
                     src={product.imageUrl || "/images/placeholder.png"}
@@ -111,7 +115,7 @@ const Hammer: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   </p>
 
                   <Link href={`/products/${product._id}`}>
-                    <button className='bg-blue-600 text-white rounded-md p-2 hover:bg-blue-800 transition duration-300 w-full'>
+                    <button className='bg-[#696B33] text-white rounded-md p-2 hover:bg-green-800 transition duration-300 w-full'>
                       View Details
                     </button>
                   </Link>
