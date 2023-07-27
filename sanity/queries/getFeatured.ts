@@ -4,7 +4,6 @@ export const getFeatured = `
     title,
     body,
     "imageUrl": featuredImage.asset->url,
-    textPosition,
     }
 `;
 
