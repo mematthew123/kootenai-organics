@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Navbar from "@/components/Navbar";
 import Layout from "@/components/Layout";
+import { PortableText } from "@portabletext/react";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { id } = context.params!;
@@ -13,7 +14,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     *[_type == "product" && _id == "${id}"]{
       _id,
       title,
-      description,
+      body,
       type,
       productType,
        terpenes,
@@ -36,7 +37,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       product: product[0] || null,
     },
-    revalidate: 60,
+    revalidate: 3,
   };
 };
 
@@ -100,7 +101,9 @@ const ProductPage: React.FC<{ product: Product }> = ({ product }) => {
               <h1 className=' text-[#423A30] text-4xl font-bold mb-4'>
                 {product.title}
               </h1>
-              <p className='text-[#423A30] mb-4'>{product.description}</p>
+              <div className='text-[#423A30]'>
+                <PortableText value={product.body} />
+              </div>
               <div className='grid grid-cols-2 gap-2'>
                 <div>
                   <p className='font-bold text-md mb-2'>Type:</p>

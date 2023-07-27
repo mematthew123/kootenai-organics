@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Layout from "@/components/Layout";
-// import { PortableText } from "@portabletext/react";
+import { PortableText } from "@portabletext/react";
 
 //   To Do!
 //   update schema to include portable text and add to product page
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
     *[_type == "product"]{
       _id,
       title,
-      description,
+      body,
       type,
       productType,
        terpenes,
@@ -111,7 +111,7 @@ const Hammer: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     {product.title}
                   </h2>
                   <p className='text-gray-600 mb-4 line-clamp-3'>
-                    {product.description}
+                    <PortableText value={product.body} />
                   </p>
 
                   <Link href={`/products/${product._id}`}>
