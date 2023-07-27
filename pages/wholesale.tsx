@@ -6,6 +6,23 @@ import { useRouter } from "next/router";
 import WholeSaleList from "@/components/WholeSaleList";
 import Navbar from "@/components/Navbar";
 import WholesaleModal from "@/components/WholesaleModal";
+import { SignedIn, UserButton, SignedOut, SignInButton } from "@clerk/nextjs";
+
+{
+  /* <SignedIn>
+                <>
+                  <header style={{ padding: 80 }}>
+                    <UserButton />
+                  </header> */
+}
+
+// </SignedIn>
+//           <SignedOut>
+//             <RedirectToSignIn />
+//           </SignedOut>
+//         </>
+
+// adoptMT
 
 type Props = {
   email: string;
@@ -43,6 +60,14 @@ const Wholesale = () => {
       <Layout>
         <Navbar />
         <div className='flex flex-col items-center justify-center min-h-screen text-center py-20'>
+          <SignedIn>
+            {/* Mount the UserButton component */}
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            {/* Signed out users get sign in button */}
+            <SignInButton />
+          </SignedOut>
           {isAllowed ? (
             <WholeSaleList />
           ) : (

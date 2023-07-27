@@ -10,6 +10,7 @@
     "email": "email dev"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.23.1",
     "@heroicons/react": "v2",
     "@portabletext/react": "^3.0.0",
     "@portabletext/types": "^2.0.5",
