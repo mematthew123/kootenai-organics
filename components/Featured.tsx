@@ -26,7 +26,6 @@ interface FeaturedData {
   body: any;
   featuredImage: string;
   alt: string;
-  textPosition: TextPosition;
 }
 
 const Featured: React.FC<{ featuredData: FeaturedData }> = ({
@@ -34,16 +33,6 @@ const Featured: React.FC<{ featuredData: FeaturedData }> = ({
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
-  const textPositionClasses: Record<TextPosition, string> = {
-    left: "lg:items-start lg:text-left",
-    center: "items-center text-center",
-    right: "lg:items-end lg:text-right",
-  };
-
-  const positionClass =
-    textPositionClasses[featuredData.textPosition] ||
-    textPositionClasses.center;
 
   return (
     <>

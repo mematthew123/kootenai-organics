@@ -110,9 +110,9 @@ const Hammer: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   <h2 className='text-xl font-semibold mb-2 truncate'>
                     {product.title}
                   </h2>
-                  <p className='text-gray-600 mb-4 line-clamp-3'>
+                  <div className='text-gray-600 mb-4 line-clamp-3'>
                     <PortableText value={product.body} />
-                  </p>
+                  </div>
 
                   <Link href={`/products/${product._id}`}>
                     <button className='bg-[#696B33] text-white rounded-md p-2 hover:bg-green-800 transition duration-300 w-full'>
