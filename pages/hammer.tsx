@@ -98,7 +98,7 @@ const Hammer: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
               filteredProducts.map((product: Product) => (
                 <div
                   key={product._id}
-                  className='border  border-gray-300 p-4 rounded-lg hover:shadow-lg transition duration-300 ease-in-out'
+                  className='border bg-[#f9f1e0]  border-gray-300 p-4 rounded-lg hover:shadow-lg transition duration-300 ease-in-out'
                 >
                   <Image
                     src={product.imageUrl || "/images/placeholder.png"}

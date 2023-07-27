@@ -38,7 +38,7 @@ const NewsLetter = () => {
   };
 
   return (
-    <div className='container mt-20 lg:mt-40 mx-auto space-y-20 py-10 bg-[#E9EDC9] px-4 rounded-lg shadow-lg border border-gray-200'>
+    <div className='container mt-20 lg:mt-40 mx-auto space-y-20 py-10 bg-[#f9f1e0] px-4 rounded-lg shadow-lg border border-gray-200'>
       <div className='  text-center space-y-10'>
         <h3
           className={`${inter.className} mt-2 text-3xl font-bold leading-8 tracking-tight text-[#423A30] sm:text-4xl`}

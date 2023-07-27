@@ -16,6 +16,7 @@ import SectionRight from "@/animations/sectionRight";
 import SectionUp from "@/animations/sectionUp";
 import { Poppins } from "next/font/google";
 import Hero from "@/components/Hero";
+import Image from "next/image";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -98,43 +99,42 @@ const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           {heroData ? (
             <Hero heroData={heroData} />
           ) : (
-            <div className='  max-w-[1240px] h-[100vh] m-auto flex flex-col justify-center items-center p-4 rounded-lg'>
-              <p
+            <div className='  max-w-[1240px] space-y-12 text-center h-[100vh] m-auto flex flex-col justify-center items-center p-4 rounded-lg'>
+              <h1
                 className={
-                  poppins.className +
-                  "text-sm text-center bottom-0  font-light leading-6 text-gray-600 left-1/2"
+                  " font-ElCaminoTextureCaps  text-6xl tracking-widest font-bold text-[#423A30]"
                 }
               >
-                ~Pure Enjoyment~
-              </p>
+                Kootenai Organics
+              </h1>
               <div className=' flex flex-col justify-center items-center text-center sm:items-start space-y-6'>
-                <h1
-                  className={
-                    " font-ElCaminoTextureCaps text-6xl tracking-wide font-bold text-[#423A30]"
-                  }
-                >
-                  Kootenai Organics
-                </h1>
+                <Image
+                  src='/logo.svg'
+                  alt='logo'
+                  width={200}
+                  height={200}
+                  className='absolute left-1/2 transform -translate-x-2/4'
+                />
+              </div>
 
+              <p
+                className={
+                  poppins.className + " text-xl font-light text-gray-600"
+                }
+              >
+                Organic small batch cannabis grown in the heart of western
+                Montana
+              </p>
+              <Link href='/menu'>
                 <p
                   className={
-                    poppins.className + " text-xl font-light text-gray-600"
+                    poppins.className +
+                    "inline-block px-10 py-3 text-base font-medium text-gray-50 bg-[#696B33] rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
                   }
                 >
-                  Organic small batch cannabis grown in the heart of western
-                  Montana
+                  Shop Now
                 </p>
-                <Link href='/menu'>
-                  <p
-                    className={
-                      poppins.className +
-                      "inline-block px-10 py-3 text-base font-medium text-gray-50 bg-[#696B33] rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md hover:shadow-lg"
-                    }
-                  >
-                    Shop Now
-                  </p>
-                </Link>
-              </div>
+              </Link>
             </div>
           )}
           {/* Featured section */}
