@@ -42,7 +42,7 @@ const WhyUs = () => {
         {features.map(({ title, description }, index) => (
           <div
             key={index}
-            className='bg-[#E9EDC9] flex flex-col items-center justify-center p-6 rounded-lg shadow-lg space-y-4'
+            className='bg-[#f9f1e0] flex flex-col items-center justify-center p-6 rounded-lg shadow-lg space-y-4'
           >
             <SectionRight>
               <FaCannabis className='text-6xl text-[#423A30]' />

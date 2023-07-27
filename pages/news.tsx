@@ -80,7 +80,7 @@ const News = ({ posts, categories }: Props) => {
       </Head>
       <Navbar />
       <Layout>
-        <div className='bg-[#E9EDC9]   flex flex-col  items-center p-4 lg:p-10 space-y-4 lg:space-y-10 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto my-20 rounded-md shadow-lg border border-gray-200'>
+        <div className='bg-[#f9f1e0]   flex flex-col  items-center p-4 lg:p-10 space-y-4 lg:space-y-10 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto my-20 rounded-md shadow-lg border border-gray-200'>
           <div className='flex flex-col items-center justify-center p-6 lg:p-12rounded-lg text-[#423A30]  max-w-7xl mx-auto '>
             <h2
               className={

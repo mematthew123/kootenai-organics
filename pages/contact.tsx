@@ -61,7 +61,7 @@ const Contact = ({ contactUsContent }: Props) => {
       </Head>
       <Navbar />
       <Layout>
-        <div className='bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200'>
+        <div className='bg-[#f9f1e0] flex flex-col lg:flex-row items-center p-4 lg:p-10 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200'>
           {contactUsContent.map((content) => (
             <div
               key={content.title}

@@ -70,7 +70,7 @@ const Post = ({ post }: Props) => {
       </Head>
       <Navbar />
       <Layout>
-        <div className='bg-[#E9EDC9] flex flex-col lg:flex-row items-center p-8 lg:p-16 space-y-8 lg:space-y-0 lg:space-x-8 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200'>
+        <div className='bg-[#f9f1e0] flex flex-col lg:flex-row items-center p-8 lg:p-16 space-y-8 lg:space-y-0 lg:space-x-8 lg:w-[1400px] max-w-full mx-auto mt-20 mb-20 rounded-md shadow-lg border border-gray-200'>
           <div
             key={post.title}
             className='p-8 lg:p-16 rounded-lg text-[#423A30] max-w-7xl mx-auto'
