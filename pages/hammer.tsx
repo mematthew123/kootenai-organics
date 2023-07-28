@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GetStaticProps } from "next";
 import { client } from "../sanity/lib/client";
 import { InferGetStaticPropsType } from "next";
@@ -33,15 +33,36 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       products,
     },
-    revalidate: 60,
+    revalidate: 3,
   };
 };
 
-const Hammer: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  products,
-}) => {
+const Hammer: React.FC = () => {
+  const [products, setProducts] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState("All");
   const [selectedProductType, setSelectedProductType] = useState("All");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await client.fetch(`
+        *[_type == "product"]{
+          _id,
+          title,
+          body,
+          type,
+          productType,
+          terpenes,
+          ingredients,
+          thc,
+          cbd,
+          "imageUrl": images[0].asset->url,
+        }
+      `);
+      setProducts(result);
+    };
+
+    fetchData();
+  }, []);
 
   const handleProductTypeFilterChange = (
     e: React.ChangeEvent<HTMLSelectElement>
@@ -73,7 +94,7 @@ const Hammer: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 onChange={handleFilterChange}
                 className='w-full appearance-none border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600'
               >
-                <option value='All'>All</option>
+                <option value='All'>Effects</option>
                 <option value='sativa'>Sativa</option>
                 <option value='indica'>Indica</option>
                 <option value='hybrid'>Hybrid</option>
@@ -85,7 +106,7 @@ const Hammer: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 onChange={handleProductTypeFilterChange}
                 className='w-full appearance-none border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600'
               >
-                <option value='All'>All</option>
+                <option value='All'>Treats</option>
                 <option value='chocolates'>Chocolates</option>
                 <option value='gummies'>Gummies</option>
                 <option value='tintures'>Tintures</option>
