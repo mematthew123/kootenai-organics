@@ -9,16 +9,16 @@ import Layout from "@/components/Layout";
 import { PortableText } from "@portabletext/react";
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { id } = context.params!;
+  const { slug } = context.params!;
   const product = await client.fetch(`
-    *[_type == "product" && _id == "${id}"]{
+    *[_type == "product" && slug.current == "${slug}"]{
       _id,
       title,
       body,
       type,
       productType,
-       terpenes,
-          ingredients,
+      terpenes,
+      ingredients,
       thc,
       cbd,
       price,
@@ -44,18 +44,21 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const products = await client.fetch(`
     *[_type == "product"]{
-      _id
+      slug
     }
   `);
 
-  const paths = products.map((product: { _id: any }) => ({
-    params: { id: product._id },
+  const paths = products.map((product: { slug: any }) => ({
+    params: { slug: product.slug.current },
   }));
 
   return { paths, fallback: "blocking" };
 };
 
-const ProductPage: React.FC<{ product: Product }> = ({ product }) => {
+const ProductPage: React.FC<{ product: Product; slug: string }> = ({
+  product,
+  slug,
+}) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -101,7 +104,7 @@ const ProductPage: React.FC<{ product: Product }> = ({ product }) => {
               <h1 className=' text-[#423A30] text-4xl font-bold mb-4'>
                 {product.title}
               </h1>
-              <div className='text-[#423A30]'>
+              <div className=' text-[#423A30] my-10 '>
                 <PortableText value={product.body} />
               </div>
               <div className='grid grid-cols-2 gap-2'>

@@ -9,9 +9,6 @@ import Navbar from "@/components/Navbar";
 import Layout from "@/components/Layout";
 import { PortableText } from "@portabletext/react";
 
-//   To Do!
-//   update schema to include portable text and add to product page
-
 export const getStaticProps: GetStaticProps = async () => {
   const products = await client.fetch(`
     *[_type == "product"]{
@@ -20,12 +17,12 @@ export const getStaticProps: GetStaticProps = async () => {
       body,
       type,
       productType,
-       terpenes,
-          ingredients,
+      terpenes,
+      ingredients,
       thc,
       cbd,
-  
       "imageUrl": images[0].asset->url,
+      "slug": slug.current
     }
   `);
 
@@ -56,6 +53,8 @@ const Hammer: React.FC = () => {
           thc,
           cbd,
           "imageUrl": images[0].asset->url,
+          "slug": slug.current
+
         }
       `);
       setProducts(result);
@@ -86,6 +85,23 @@ const Hammer: React.FC = () => {
     <>
       <Navbar />
       <Layout>
+        {/* Hero section */}
+        <div className='flex flex-col items-center justify-center text-center text-gray-100  '>
+          <Image
+            src='/hammer.svg'
+            width={400}
+            height={400}
+            alt='Hero Image'
+            className='w-60 h-60 mt-20 object-cover object-center mb-4 rounded'
+          />
+          <h2 className='text-3xl font-semibold mb-4'>Velvet Hammer</h2>
+          <p className='text-xl mb-4 lg:w-[600px]'>
+            Our Velvet Hammer line is a luxurious line of cannabis infused
+            treats.
+            <br />
+          </p>
+        </div>
+
         <div className='mt-10 lg:mt-20 container mx-auto px-4 py-10 md:py-20'>
           <div className='flex flex-col md:flex-row justify-end mb-4 space-y-2 md:space-y-0 md:space-x-4'>
             <div className='w-full md:w-auto'>
@@ -131,12 +147,12 @@ const Hammer: React.FC = () => {
                   <h2 className='text-xl font-semibold mb-2 truncate'>
                     {product.title}
                   </h2>
-                  <div className='text-gray-600 mb-4 line-clamp-3'>
-                    <PortableText value={product.body} />
-                  </div>
+                  <p className='text-gray-600 mb-4 line-clamp-3'>
+                    {product.body[0].children[0].text}
+                  </p>
 
-                  <Link href={`/products/${product._id}`}>
-                    <button className='bg-[#696B33] text-white rounded-md p-2 hover:bg-green-800 transition duration-300 w-full'>
+                  <Link href={`/products/${product.slug}`}>
+                    <button className='bg-[#696B33] text-gray-200 rounded-md p-2 hover:bg-green-800 transition duration-300 w-full'>
                       View Details
                     </button>
                   </Link>

@@ -1,4 +1,5 @@
 export interface Product {
+  slug: any;
   body: any;
   _id: string;
   title: string;
