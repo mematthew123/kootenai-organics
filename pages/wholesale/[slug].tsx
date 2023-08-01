@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { getWholesaleBySlug } from "@/sanity/queries/getWholesaleSlug";
 import { getAllWholesaleSlugs } from "@/sanity/queries/getAllWholesaleSlugs";
 import Navbar from "@/components/Navbar";
@@ -6,6 +6,11 @@ import Layout from "@/components/Layout";
 import Head from "next/head";
 import Image from "next/image";
 import { Wholesale } from "@/interfaces/wholesale.interfaces";
+import { useRouter } from "next/router";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { PortableText } from "@portabletext/react";
+import { logout } from "../api/login";
 
 type Params = {
   params: {
@@ -37,10 +42,39 @@ export async function getStaticPaths() {
 }
 
 const ProductPage: React.FC<{ product: Wholesale }> = ({ product }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const token = localStorage.getItem("auth.token");
+
+      if (!token) {
+        router.replace(
+          "/wholesale?message=Please login to view the product details."
+        );
+        return;
+      }
+
+      const res = await fetch("/api/validate-token", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token }),
+      });
+    };
+
+    checkAuth();
+  }, []);
+
   // Handle undefined product when fallback is true
   if (!product) {
     return <div>Loading...</div>;
   }
+
+  const formattedIngredients = Array.isArray(product.ingredients)
+    ? product.ingredients.join(" | ")
+    : product.ingredients;
 
   return (
     <>
@@ -53,16 +87,72 @@ const ProductPage: React.FC<{ product: Wholesale }> = ({ product }) => {
       </Head>
       <Navbar />
       <Layout>
-        {/* Add your custom product layout here, similar to how you did for posts */}
-        <h1>{product.title}</h1>
-        <Image
-          src={product.imageUrl || "/images/placeholder.png"}
-          alt={product.title}
-          width={500}
-          height={500}
-        />
-        <p>{product.description}</p>
-        {/* etc. */}
+        <div className='container mx-auto mt-10 lg:mt-20 px-6 py-8'>
+          <button
+            onClick={logout}
+            className='px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600'
+          >
+            Logout
+          </button>{" "}
+          <div className='flex flex-wrap -mx-4'>
+            <div className='w-full md:w-1/2 px-4 mb-4 md:mb-0'>
+              <Swiper
+                spaceBetween={50}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log("slide change")}
+                className='shadow-lg rounded-lg overflow-hidden h-96'
+              >
+                {product.imageUrls.map((url, index) => (
+                  <SwiperSlide key={index}>
+                    <img
+                      src={url}
+                      alt={product.title}
+                      className='h-full w-full object-cover'
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            <div className='w-full md:w-1/2 px-4'>
+              <h1 className=' text-[#423A30] text-4xl font-bold mb-4'>
+                {product.title}
+              </h1>
+              <div className=' text-[#423A30] my-10 '>
+                <PortableText value={product.body} />
+              </div>
+              <div className='grid grid-cols-2 gap-2'>
+                <div>
+                  <p className='font-bold text-md mb-2'>Type:</p>
+                  <span className='inline-block  rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2 mb-2'>
+                    {product.type}
+                  </span>
+                </div>
+                <div>
+                  <p className='font-bold text-md mb-2'>THC:</p>
+                  <span className='inline-block  rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2 mb-2'>
+                    {product.thc}%
+                  </span>
+                </div>
+                <div>
+                  <p className='font-bold text-md mb-2'>CBD:</p>
+                  <span className='inline-block  rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2 mb-2'>
+                    {product.cbd}%
+                  </span>
+                </div>
+                <div>
+                  <p className='font-bold text-md mb-2'>Ingredients:</p>
+                  <span className='inline-block  rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2 mb-2'>
+                    {formattedIngredients}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </Layout>
     </>
   );

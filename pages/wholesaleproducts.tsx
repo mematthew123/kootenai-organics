@@ -7,6 +7,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
+import { logout } from "./api/login";
 
 export const getStaticProps: GetStaticProps = async () => {
   const wholesaleProducts = await client.fetch(`
@@ -69,7 +70,14 @@ const WholeSaleStuff = ({
       <Navbar />
       <Layout>
         {/* Hero section */}
-        <div className=' my-20 flex flex-col items-center justify-center text-center text-gray-100  '></div>
+        <div className=' my-20 flex flex-col items-end text-center text-gray-100  '>
+          {/* <button
+            onClick={logout}
+            className='px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600'
+          >
+            Logout
+          </button>{" "} */}
+        </div>
 
         <div className='mt-10 lg:mt-20 container mx-auto px-4 py-10 md:py-20'>
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>

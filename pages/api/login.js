@@ -42,3 +42,10 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Only POST requests are accepted" });
   }
 }
+
+export const logout = () => {
+  // Remove the token from localStorage
+  localStorage.removeItem("auth.token");
+  // Redirect to home page
+  window.location.href = "/";
+};
