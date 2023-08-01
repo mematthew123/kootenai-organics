@@ -1,28 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Layout from "@/components/Layout";
-import { client } from "@/sanity/lib/client";
 import { useRouter } from "next/router";
-import WholeSaleList from "@/components/WholeSaleList";
 import Navbar from "@/components/Navbar";
 import WholesaleModal from "@/components/WholesaleModal";
 
-type Props = {
-  email: string;
-  setEmail: (email: string) => void;
-  handleSubmit: (event: { preventDefault: () => void }) => void;
-};
-
-const isEmailWhitelisted = async (email: string) => {
-  const query = `*[_type == "whitelistedEmail" && email == $email]`;
-  const params = { email };
-  const results = await client.fetch(query, params);
-  return results.length > 0;
-};
-
 const Wholesale = () => {
   const [email, setEmail] = useState("");
-  const [isAllowed, setIsAllowed] = useState(false);
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
 
@@ -38,8 +22,8 @@ const Wholesale = () => {
 
     if (response.ok) {
       const data = await response.json();
-      localStorage.setItem("token", data.token);
-      // Redirect to a protected page if necessary
+      console.log(data);
+      localStorage.setItem("auth.token", data.token);
       router.push("/wholesaleproducts");
     } else {
       // Show an error alert if the login failed

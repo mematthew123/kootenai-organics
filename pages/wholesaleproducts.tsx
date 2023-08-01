@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GetStaticProps } from "next";
 import { client } from "../sanity/lib/client";
 import { Wholesale } from "@/interfaces/wholesale.interfaces";
@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Layout from "@/components/Layout";
+import { useRouter } from "next/router";
 
 export const getStaticProps: GetStaticProps = async () => {
   const wholesaleProducts = await client.fetch(`
@@ -39,18 +40,36 @@ const WholeSaleStuff = ({
 }: {
   wholesaleProducts: Wholesale[];
 }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const token = localStorage.getItem("auth.token");
+
+      if (!token) {
+        router.replace(
+          "/wholesale?message=Please login to view the product details."
+        );
+        return;
+      }
+
+      const res = await fetch("/api/validate-token", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ token }),
+      });
+    };
+
+    checkAuth();
+  }, []);
   return (
     <>
       <Navbar />
       <Layout>
         {/* Hero section */}
-        <div className='flex flex-col items-center justify-center text-center text-gray-100  '>
-          <h2 className='text-3xl font-semibold mb-4'>Wholesale customers</h2>
-          <p className='text-xl mb-4 lg:w-[600px]'>
-            Please use the link below to schedule a meeting to discuss pricing
-            and availability.
-          </p>
-        </div>
+        <div className=' my-20 flex flex-col items-center justify-center text-center text-gray-100  '></div>
 
         <div className='mt-10 lg:mt-20 container mx-auto px-4 py-10 md:py-20'>
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
