@@ -57,11 +57,9 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         </div>
 
         <div className='px-6 pt-1 pb-4'>
-          <Link href={`tel:888-555-5555`}>
-            {" "}
-            {/* replace # with your Calendly link */}
-            <p className='inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>
-              Contact Us
+          <Link href={`/wholesale/shop/${product.slug}`}>
+            <p className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+              View Product
             </p>
           </Link>
         </div>
