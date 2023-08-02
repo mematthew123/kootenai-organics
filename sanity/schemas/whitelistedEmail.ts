@@ -5,12 +5,23 @@ export default defineType({
     title: 'Whitelisted Email',
     type: 'document',
     fields: [
-      {
-        name: 'email',
-        title: 'Email',
-        type: 'string',
-      },
+      defineField({
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+    }),
+    defineField({
+      name: 'email',
+      title: 'Email',
+      type: 'string',
+    }),
+    defineField({
+      name: 'license',
+      title: 'License',
+      type: 'string',
+    }),
     ],
+
     preview: {
       select: {
         title: 'email',

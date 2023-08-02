@@ -4,11 +4,14 @@ import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar";
 import WholesaleModal from "@/components/WholesaleModal";
+import Link from "next/link";
 
 const Wholesale = () => {
   const [email, setEmail] = useState("");
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
+
+  const [license, setLicense] = useState("");
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -17,7 +20,7 @@ const Wholesale = () => {
     const response = await fetch("/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, license }),
     });
 
     if (response.ok) {
@@ -41,26 +44,63 @@ const Wholesale = () => {
             Wholesale customers
           </h1>
           <p className='mb-4'>
-            Please enter your email address to access our wholesale store.
+            Please enter your email address and licsense number to access our
+            wholesale store.
           </p>
-          <form className='w-full max-w-sm' onSubmit={handleSubmit}>
-            <div className='flex items-center border-b-2 border-teal-500 py-2'>
+          <form
+            className='w-full max-w-md bg-[#f9f1e0] shadow-md rounded px-8 pt-6 pb-8 mb-4'
+            onSubmit={handleSubmit}
+          >
+            <div className='mb-4'>
+              <label
+                className='block text-gray-700 text-sm font-bold mb-2'
+                htmlFor='email'
+              >
+                Email Address
+              </label>
               <input
-                className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none'
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                 type='email'
                 placeholder='Your Email'
                 aria-label='Your Email'
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)} // input field for the email
               />
+            </div>
+            <div className='mb-6'>
+              <label
+                className='block text-gray-700 text-sm font-bold mb-2'
+                htmlFor='license'
+              >
+                License
+              </label>
+              <input
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                type='text'
+                placeholder='Your License'
+                aria-label='Your License'
+                value={license}
+                onChange={(e) => setLicense(e.target.value)} // input field for the license number
+              />
+            </div>
+            <div className='flex items-center justify-between'>
               <button
-                className='flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded'
+                className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
                 type='submit'
               >
                 Sign In
               </button>
             </div>
           </form>
+          {/* <p className=' text-gray-600 '>
+            First time here?
+            <Link
+              href='/wholesaleform'
+              className='text-blue-500 hover:text-blue-700'
+            >
+              <p> Click here to apply for a wholesale account.</p>
+            </Link>
+          </p> */}
         </div>
       </Layout>
     </>

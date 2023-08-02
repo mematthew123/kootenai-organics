@@ -3,19 +3,20 @@ import jwt from "jsonwebtoken";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { email } = req.body;
+    const { email, license } = req.body;
 
     try {
       // Fetch from Sanity
-      const whitelistedEmails = await client.fetch(
-        '*[_type == "whitelistedEmail" && email == $userEmail]',
+      const whitelistedUsers = await client.fetch(
+        '*[_type == "whitelistedEmail" && email == $userEmail &&  == $userLicense]',
         {
           userEmail: email,
+          userLicense: license,
         }
       );
 
-      // If email is whitelisted
-      if (whitelistedEmails.length > 0) {
+      // If email and license are whitelisted
+      if (whitelistedUsers.length > 0) {
         // Ensure JWT_SECRET is available
         if (!process.env.JWT_SECRET) {
           return res
@@ -30,7 +31,9 @@ export default async function handler(req, res) {
 
         return res.status(200).json({ token });
       } else {
-        return res.status(401).json({ message: "Email not whitelisted" });
+        return res
+          .status(401)
+          .json({ message: "Email or license not whitelisted" });
       }
     } catch (error) {
       console.error(error);
