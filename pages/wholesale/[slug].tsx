@@ -88,12 +88,6 @@ const ProductPage: React.FC<{ product: Wholesale }> = ({ product }) => {
       <Navbar />
       <Layout>
         <div className='container mx-auto mt-10 lg:mt-20 px-6 py-8'>
-          <button
-            onClick={logout}
-            className='px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600'
-          >
-            Logout
-          </button>{" "}
           <div className='flex flex-wrap -mx-4'>
             <div className='w-full md:w-1/2 px-4 mb-4 md:mb-0'>
               <Swiper

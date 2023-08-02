@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     try {
       // Fetch from Sanity
       const whitelistedUsers = await client.fetch(
-        '*[_type == "whitelistedEmail" && email == $userEmail &&  == $userLicense]',
+        '*[_type == "whitelistedEmail" && email == $userEmail && license == $userLicense]',
         {
           userEmail: email,
           userLicense: license,
