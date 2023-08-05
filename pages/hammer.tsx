@@ -86,7 +86,7 @@ const Hammer: React.FC = () => {
       <Navbar />
       <Layout>
         {/* Hero section */}
-        <div className='flex flex-col items-center justify-center text-center text-gray-100  '>
+        <div className='flex flex-col items-center justify-center text-center text-gray-200  '>
           <Image
             src='/hammer.svg'
             width={400}
@@ -96,8 +96,9 @@ const Hammer: React.FC = () => {
           />
           <h2 className='text-3xl font-semibold mb-4'>Velvet Hammer</h2>
           <p className='text-xl mb-4 lg:w-[600px]'>
-            Our Velvet Hammer line is a luxurious line of cannabis infused
-            treats.
+            Our Velvet Hammer line is a collection of products that are both
+            delicious and potent. We use only the highest quality ingredients
+            and our products are made with love and care.
             <br />
           </p>
         </div>
