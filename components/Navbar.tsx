@@ -4,6 +4,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import navLogo from "/public/Kootenai Organics_Primary Logo - Grass.png";
+import { logout } from "@/pages/api/login";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,6 +33,14 @@ const Navbar = () => {
       }
     };
     window.addEventListener("scroll", changeColor);
+  }, []);
+
+  // conditional rendering of logout button
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("auth.token");
+    setIsLoggedIn(!!token);
   }, []);
 
   return (
@@ -68,6 +77,11 @@ const Navbar = () => {
           <li className='p-4 hover:text-[#183B47] hover:underline'>
             <Link href='/wholesale'>Wholesale</Link>
           </li>
+          {isLoggedIn && (
+            <li className='p-4 hover:text-[#183B47] hover:underline'>
+              <button onClick={logout}>Logout</button>
+            </li>
+          )}
         </ul>
 
         {/* Mobile Button */}
